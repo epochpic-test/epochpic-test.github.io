@@ -126,14 +126,14 @@ number_density = always + species
 temperature = always + species
 end:output
 &lt;/code>&lt;/pre>
-&lt;p>&lt;img src="/tutorial/img/Two_Stream_Late.png" alt="The final state of the electron phase space for the two streaminstabilityexample">
+&lt;p>&lt;img src="/img/Two_Stream_Late.png" alt="The final state of the electron phase space for the two streaminstabilityexample">
 In this example, the constant block sets up constants for the momentum
 space drift, the temperature and the electron number density. The two
 species blocks set up the two drifting Maxwellian distributions and the
 constant density profile. The final output from this simulation is shown
 in the figure.&lt;/p>
 &lt;h1 id="structured_density_profile_in_epoch2d">Structured density profile in EPOCH2D&lt;/h1>
-&lt;p>&lt;img src="/tutorial/img/EPOCH_density_example.png" alt="Complex 2D densitystructure">&lt;/p>
+&lt;p>&lt;img src="/img/EPOCH_density_example.png" alt="Complex 2D densitystructure">&lt;/p>
 &lt;p>A simple but useful example for EPOCH2D is to have a highly structured
 initial condition to show that this is still easy to implement in EPOCH.
 A good example initial condition would be:&lt;/p>
@@ -236,9 +236,9 @@ npart = nx * ny * nz
 end:species
 &lt;/code>&lt;/pre>
 &lt;h4 id="3d_cone">Cone initial conditions in 3D&lt;/h4>
-&lt;p>&lt;img src="/tutorial/img/3dcone.png" alt="Cone initial conditions in 3D">&lt;/p>
+&lt;p>&lt;img src="/img/3dcone.png" alt="Cone initial conditions in 3D">&lt;/p>
 &lt;h4 id="2d_cone">Cone initial conditions in 2D&lt;/h4>
-&lt;p>&lt;img src="/tutorial/img/2dcone.png" alt="Cone initial conditions in 2D">&lt;/p>
+&lt;p>&lt;img src="/img/2dcone.png" alt="Cone initial conditions in 2D">&lt;/p>
 &lt;p>To convert this to 2D, simply replace the line &lt;code>r = sqrt(y^2+z^2)&lt;/code> with
 the line &lt;code>r = abs(y)&lt;/code>. The actual work in these initial conditions is
 done by the three lines inside the block for the &lt;strong>Proton&lt;/strong> species.
@@ -316,7 +316,7 @@ ey = always
 bz = always
 end:output
 &lt;/code>&lt;/pre>
-&lt;p>&lt;img src="/tutorial/img/FocussedBeam.png" alt="The focussed beam">&lt;/p>
+&lt;p>&lt;img src="/img/FocussedBeam.png" alt="The focussed beam">&lt;/p>
 &lt;p>The deck is based on the laser test deck supplied with Epoch, with a
 modified laser and longer runtime. Other classes of beam (Bessel etc)
 can be created similarly.&lt;/p></description></item><item><title/><link>/tutorial/binary_files/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/binary_files/</guid><description>&lt;p>There are several input deck blocks which can read conditions directly
@@ -367,60 +367,7 @@ deck must specify &amp;ldquo;nx = 10&amp;rdquo; and &amp;ldquo;ny = 20&amp;rdquo
 use the &amp;ldquo;offset&amp;rdquo; comand in the input deck to specify where the next
 array in the file is to be located. This can be tricky to work with and
 it is therefore recommended to write each separate array to its own
-file.&lt;/p></description></item><item><title/><link>/tutorial/calculable_particle_properties/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/calculable_particle_properties/</guid><description>&lt;p>As of version 5, EPOCH introduces the concept of calculable particle
-properties. These are generically implemented particle properties that
-can be calculated for all particles in EPOCH and are used by name in
-both particle output and specifying advanced distribution functions. The
-currently available names are&lt;/p>
-&lt;ul>
-&lt;li>dir_x - X position of particle&lt;/li>
-&lt;li>dir_y - Y position of particle (EPOCH2D and EPOCH3D)&lt;/li>
-&lt;li>dir_z - Z position of particle (EPOCH3D)&lt;/li>
-&lt;li>dir_px - X momentum of particle&lt;/li>
-&lt;li>dir_py - Y momentum of particle&lt;/li>
-&lt;li>dir_pz - Z momentum of particle&lt;/li>
-&lt;li>dir_energy - Kinetic energy of particle (total energy for photons)&lt;/li>
-&lt;li>dir_gamma_m_1 - Gamma - 1 for particle. Calculate as 1 for
-photons&lt;/li>
-&lt;li>dir_xy_angle - Angle of the particle&amp;rsquo;s momentum in the X/Y plane&lt;/li>
-&lt;li>dir_yz_angle - Angle of the particle&amp;rsquo;s momentum in the Y/Z plane&lt;/li>
-&lt;li>dir_zx_angle - Angle of the particle&amp;rsquo;s momentum in the Z/X plane&lt;/li>
-&lt;li>dir_modp - Particle&amp;rsquo;s total momentum&lt;/li>
-&lt;li>dir_mass - Particle&amp;rsquo;s mass&lt;/li>
-&lt;li>dir_ekflux_xp - Particle&amp;rsquo;s kinetic energy flux in the positive x
-direction&lt;/li>
-&lt;li>dir_ekflux_xm - Particle&amp;rsquo;s kinetic energy flux in the negative x
-direction&lt;/li>
-&lt;li>dir_ekflux_yp - Particle&amp;rsquo;s kinetic energy flux in the positive y
-direction&lt;/li>
-&lt;li>dir_ekflux_ym - Particle&amp;rsquo;s kinetic energy flux in the negative y
-direction&lt;/li>
-&lt;li>dir_ekflux_zp - Particle&amp;rsquo;s kinetic energy flux in the positive z
-direction&lt;/li>
-&lt;li>dir_ekflux_zm - Particle&amp;rsquo;s kinetic energy flux in the negative z
-direction&lt;/li>
-&lt;li>dir_q - Particle charge&lt;/li>
-&lt;li>dir_n - Particle self weight (number density)&lt;/li>
-&lt;li>dir_jx - Single particle current in x direction&lt;/li>
-&lt;li>dir_jy - Single particle current in y direction&lt;/li>
-&lt;li>dir_jz - Single particle current in z direction&lt;/li>
-&lt;li>dir_vx - Single particle velocity in x direction&lt;/li>
-&lt;li>dir_vy - Single particle velocity in y direction&lt;/li>
-&lt;li>dir_vz - Single particle velocity in z direction&lt;/li>
-&lt;li>dir_modv - Single particle modulus velocity&lt;/li>
-&lt;li>dir_id - Particle ID&lt;/li>
-&lt;li>weight - Particle weight&lt;/li>
-&lt;li>time - Particle local time&lt;/li>
-&lt;li>dir_x_resample - Particle X position uncoupled from primary grid.
-Allows you to produce resampled spatial output at the cost of
-greater memory requirements on each node&lt;/li>
-&lt;li>dir_y_resample - Particle Y position uncoupled from primary grid.
-Allows you to produce resampled spatial output at the cost of
-greater memory requirements on each node&lt;/li>
-&lt;li>dir_z_resample - Particle Z position uncoupled from primary grid.
-Allows you to produce resampled spatial output at the cost of
-greater memory requirements on each node&lt;/li>
-&lt;/ul></description></item><item><title/><link>/tutorial/compiler_flags/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/compiler_flags/</guid><description>&lt;p>As already stated, some features of the code are controlled by compiler
+file.&lt;/p></description></item><item><title/><link>/tutorial/compiler_flags/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/compiler_flags/</guid><description>&lt;p>As already stated, some features of the code are controlled by compiler
 preprocessor directives. The flags for these preprocessor directives are
 specified in &amp;ldquo;Makefile&amp;rdquo; and are placed on lines which look like the
 following:&lt;/p>
@@ -722,15 +669,7 @@ dt_snapshot = 1 * micron / c
 grid = always
 ey = always
 end:output
-&lt;/code>&lt;/pre></description></item><item><title/><link>/tutorial/decktransclusiontest/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/decktransclusiontest/</guid><description>&lt;p>some text here and some handwritten JSON {&amp;ldquo;blocks&amp;rdquo;:{&amp;ldquo;laser&amp;rdquo;:&amp;ldquo;abc&amp;rdquo;,
-&amp;ldquo;boundaries&amp;rdquo;:&amp;ldquo;xyz&amp;rdquo;, &amp;ldquo;control&amp;rdquo;:&amp;ldquo;wonderful&amp;rdquo;}}&lt;/p></description></item><item><title/><link>/tutorial/example_creator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/example_creator/</guid><description>&lt;p>User-supplied example problems can be submitted here. These should
-contain, at minimum, a brief description and setup information, the
-input deck used and an image of the expected output.&lt;/p>
-&lt;p>Enter a page title (e.g. two stream instability) below to create a new
-example page for EPOCH. You need a user account to proceed. A page will
-be created with a skeleton layout for you to fill in. &lt;inputbox>
-type=create prefix=EPOCH USER: buttonlabel=Submit example problem
-preload=Template:Preload example &lt;/inputbox>&lt;/p></description></item><item><title/><link>/tutorial/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/faq/</guid><description>&lt;h1 id="faqs">FAQs&lt;/h1>
+&lt;/code>&lt;/pre></description></item><item><title/><link>/tutorial/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/faq/</guid><description>&lt;h1 id="faqs">FAQs&lt;/h1>
 &lt;h2 id="is-this-manual-up-to-date">Is this manual up to date?&lt;/h2>
 &lt;p>Whenever a new milestone version of &lt;strong>EPOCH&lt;/strong> is finalised, the version
 number is changed and this manual is updated accordingly. The version
@@ -869,116 +808,7 @@ commented.&lt;/p>
 &lt;h2 id="how-do-i-acknowledge-use-of-the-code">How do I acknowledge use of the code?&lt;/h2>
 &lt;p>See [here][Acknowledging_EPOCH].&lt;/p>
 &lt;h2 id="next-section">Next Section&lt;/h2>
-&lt;p>[The structure of the EPOCH codes][Structure]&lt;/p></description></item><item><title/><link>/tutorial/formattingexamples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/formattingexamples/</guid><description>&lt;p>Set the page title&lt;/p>
-&lt;pre>&lt;code>{{DISPLAYTITLE: EPOCH Page Formatting}}
-&lt;/code>&lt;/pre>
-&lt;p>Note: Convert from .tex using pandoc -t mediawiki&lt;/p>
-&lt;h1 id="versioning_restrictions">Versioning restrictions&lt;/h1>
-&lt;p>There are a few versioning templates to easily flag things when they
-appear or disappear&lt;/p>
-&lt;pre>&lt;code>{{VersionBox| 0.0}}
-&lt;/code>&lt;/pre>
-&lt;p>A box to head up a page etc&lt;/p>
-&lt;pre>&lt;code>{{VersionedBullet|4.11| Bullet text}} - Rest of text here
-&lt;/code>&lt;/pre>
-&lt;p>- Rest of text here&lt;/p>
-&lt;p>Include an &amp;lsquo;=&amp;rsquo; sign inside a template: explicitly number the template
-arguments&lt;/p>
-&lt;pre>&lt;code>{{VersionedBullet|4.11| 2= Part of text = other text}} - Rest of text here
-&lt;/code>&lt;/pre>
-&lt;p>- Rest of text here&lt;/p>
-&lt;pre>&lt;code>{{DeprecatedBox|4.12|
-* Bullet text - Some long description of the bullet goes here and can run to multiple lines as always, and can continue for as long as I want to type eh}}
-{{VersionFillBox|4.12|
-* Bullet text - Some long description of the bullet goes here and can run to multiple lines as always, and can continue for as long as I want to type eh}}
-&lt;/code>&lt;/pre>
-&lt;h3 id="subsection_here">Subsection here&lt;/h3>
-&lt;pre>&lt;code>{{VersionSectionBox|4.12}}
-&lt;/code>&lt;/pre>
-&lt;h1 id="syntax_highlighted_code">Syntax highlighted code&lt;/h1>
-&lt;p>Deck blocks can be coloured&lt;/p>
-&lt;pre>&lt;code>&amp;lt;syntaxhighlight lang=&amp;quot;deck&amp;quot;&amp;gt;
-begin:control
-# Global number of gridpoints
-nx = 512 # in x
-ny = 512 # in y
-# Global number of particles
-npart = 10 * nx * ny
-end:control
-&amp;lt;/syntaxhighlight&amp;gt;
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code class="language-perl">begin:control
-# Global number of gridpoints
-nx = 512 # in x
-ny = 512 # in y
-# Global number of particles
-npart = 10 * nx * ny
-end:control
-&lt;/code>&lt;/pre>
-&lt;p>So can Fortran Code snippets although fancier stuff doesn&amp;rsquo;t quite work&lt;/p>
-&lt;pre>&lt;code>&amp;lt;syntaxhighlight lang=&amp;quot;fortran&amp;quot;&amp;gt;
-TYPE particle
-REAL(num), DIMENSION(3) :: part_p
-REAL(num) :: part_pos
-#ifdef PER_PARTICLE_CHARGE_MASS
-REAL(num) :: charge
-REAL(num) :: mass
-#endif
-TYPE(particle), POINTER :: next, prev
-#ifdef PARTICLE_DEBUG
-INTEGER :: processor
-INTEGER :: processor_at_t0
-#endif
-END TYPE particle
-&amp;lt;/syntaxhighlight&amp;gt;
-&lt;/code>&lt;/pre>
-&lt;pre>&lt;code class="language-fortran"> TYPE particle
-REAL(num), DIMENSION(3) :: part_p
-REAL(num) :: part_pos
-#ifdef PER_PARTICLE_CHARGE_MASS
-REAL(num) :: charge
-REAL(num) :: mass
-#endif
-TYPE(particle), POINTER :: next, prev
-#ifdef PARTICLE_DEBUG
-INTEGER :: processor
-INTEGER :: processor_at_t0
-#endif
-END TYPE particle
-&lt;/code>&lt;/pre>
-&lt;h1 id="references">References&lt;/h1>
-&lt;p>Inline references are created as&lt;/p>
-&lt;pre>&lt;code> &amp;lt;ref name=&amp;quot;Bloggs&amp;quot;&amp;gt; J. Bloggs, &amp;quot;The Chicken Paper&amp;quot;, The Journal of Chickens, page 10, 2017[http://link]&amp;lt;/ref&amp;gt;
-&lt;/code>&lt;/pre>
-&lt;p>&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/p>
-&lt;p>and get dumped at the bottom of the page. It&amp;rsquo;s better to include them
-explicitly using&lt;/p>
-&lt;pre>&lt;code>===References===
-&amp;lt;references /&amp;gt;
-&lt;/code>&lt;/pre>
-&lt;h3 id="references_1">References&lt;/h3>
-&lt;p>&lt;references />&lt;/p>
-&lt;h1 id="figures">Figures&lt;/h1>
-&lt;p>Figures are best included as thumbnails such as&lt;/p>
-&lt;pre>&lt;code>[[File:Two Stream Late.png|right|200px|thumb|Caption]]
-&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="/tutorial/img/Two_Stream_Late.png" alt="Caption">&lt;/p>
-&lt;section class="footnotes" role="doc-endnotes">
-&lt;hr>
-&lt;ol>
-&lt;li id="fn:1" role="doc-endnote">
-&lt;p>J. Bloggs, &amp;ldquo;The Chicken Paper&amp;rdquo;, The Journal of Chickens, page
-10, 2017
-&lt;a href="http://link" target="_blank" rel="noopener">1&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/section></description></item><item><title/><link>/tutorial/hrtest/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/hrtest/</guid><description>&lt;div class="mw-collapsible mw-collapsed" style="border-style: solid; border-width: 2px; border-color:#0059A1">
-&lt;p>Or click &amp;ldquo;Expand&amp;rdquo; and copy this text into a file &amp;ldquo;input.deck&amp;rdquo; in
-your Data directory:&lt;/p>
-&lt;div class="mw-collapsible-content">
-&lt;p>Hallo&lt;/p>
-&lt;/div>
-&lt;/div></description></item><item><title/><link>/tutorial/input_deck/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/input_deck/</guid><description>&lt;p>Most of the control of EPOCH is through a text file called &lt;code>input.deck&lt;/code>.
+&lt;p>[The structure of the EPOCH codes][Structure]&lt;/p></description></item><item><title/><link>/tutorial/input_deck/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/input_deck/</guid><description>&lt;p>Most of the control of EPOCH is through a text file called &lt;code>input.deck&lt;/code>.
 The input deck file must be in the output directory which is passed to
 the code at runtime and contains all the basic information which is
 needed to set up the code, including the size and subdivision of the
@@ -1064,68 +894,6 @@ setup. See
 &lt;h1 id="next_section">Next section&lt;/h1>
 &lt;p>
 &lt;a href="/tutorial/input_deck_control">The control block&lt;/a>&lt;/p>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title/><link>/tutorial/input_deck_adf/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/input_deck_adf/</guid><description>&lt;p>The ADF is a generalisation of EPOCH&amp;rsquo;s classic distribution functions
-but using
-&lt;a href="/tutorial/calculable_particle_properties">calculable particle
-properties&lt;/a> to specify
-the axes of the distribution function and the value accumulated on the
-grid for that distribution function.&lt;/p>
-&lt;h1 id="example_deck_block">Example deck block&lt;/h1>
-&lt;pre>&lt;code class="language-perl">begin:adf
-name= x_px_df
-height = dir_n
-accumulate_mode = sum
-direction=(dir_x, dir_px)
-resolution = (null, 100)
-range = ((0,1), (0,2e-22))
-use_weight = T
-use_shapes = T
-end:adf
-&lt;/code>&lt;/pre>
-&lt;h1 id="name">Name&lt;/h1>
-&lt;p>The ADF must be named so that it can be referred to in pipeline blocks&lt;/p>
-&lt;h1 id="height">Height&lt;/h1>
-&lt;p>The &amp;ldquo;height&amp;rdquo; key is a calculable particle property that should be
-accumulated on the grid&lt;/p>
-&lt;h1 id="accumulate_mode">Accumulate mode&lt;/h1>
-&lt;p>The &amp;ldquo;accumulate_mode&amp;rdquo; key is how the height should be accumulated on
-the grid. Options are&lt;/p>
-&lt;ul>
-&lt;li>sum - Sum the value on the grid&lt;/li>
-&lt;li>average - Calculate the average value of the height in each cell&lt;/li>
-&lt;li>temperature - Ignore the height value and calculate the temperature
-in each cell&lt;/li>
-&lt;/ul>
-&lt;p>If this key is absent then sum is assumed&lt;/p>
-&lt;h1 id="direction">Direction&lt;/h1>
-&lt;p>The &amp;ldquo;direction&amp;rdquo; key specifies the calculable particle property for
-each axis of the distribution function. You may specify up to 6 axes,
-specifications for resolutions and ranges must be of the same length as
-the direction specification&lt;/p>
-&lt;h1 id="resolution">Resolution&lt;/h1>
-&lt;p>The &amp;ldquo;resolution&amp;rdquo; key specifies the desired resolution for each axis of
-the distribution function. The number of keys must match the number of
-directions specified. The resolution is ignored for spatial dimensions
-(but not resampled spatial dimensions) which must match the base grid
-resolution&lt;/p>
-&lt;h1 id="range">Range&lt;/h1>
-&lt;p>The &amp;ldquo;range&amp;rdquo; key is a list of (lower_bound, upper_bound) pairs for
-each axis of the ADF. There must be as many pairs as there are
-directions. If this key is missing then the range is calculated at each
-output to contain all particles in the source for the ADF&lt;/p>
-&lt;h1 id="use_weight">Use weight&lt;/h1>
-&lt;p>The &amp;ldquo;use_weight&amp;rdquo; keyword is used to specify whether or not the
-particle weight should be used when accumulating the data for the ADF.
-For &amp;ldquo;height=dir_n&amp;rdquo; this key being F means that you are calculating
-the number of simulation particles in each cell of the ADF. It&amp;rsquo;s
-meaning is less clear for other accumulated heights. If this key is not
-specified it is assumed to be T&lt;/p>
-&lt;h1 id="use_shape_function">Use shape function&lt;/h1>
-&lt;p>The &amp;ldquo;use_shape&amp;rdquo; keyword specified whether or not to use the shape
-function when calculating spatial axes for distribution functions. If F
-then all of a particle&amp;rsquo;s property is deposited in the cell which
-contain the particle&amp;rsquo;s centre. This is comparable to the method used by
-the EPOCH legacy distribution functions.&lt;/p>
 &lt;!-- ######################## Cross references ######################## --></description></item><item><title/><link>/tutorial/input_deck_antenna/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/input_deck_antenna/</guid><description>&lt;p>Antennae allow you to specify currents in the simulation domain that are
 added to the self consistent currents from the core solver. You can
 either specify the currents entirely manually or you can specify a
@@ -1892,7 +1660,7 @@ shown in the Figure. Full control over these coefficients can be
 achieved by specifying &amp;ldquo;custom&amp;rdquo; for the &amp;ldquo;maxwell_solver&amp;rdquo; parameter in
 the control block and then supplying a &amp;ldquo;stencil&amp;rdquo; block to provide the
 desired coefficient values.&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/Stencil.png" alt="Coefficient locations for the B_z field computational stencil in2D.">
+&lt;p>&lt;img src="/img/Stencil.png" alt="Coefficient locations for the B_z field computational stencil in2D.">
 This option allows the user to specify an extended stencil scheme that
 has been specifically optimised for the simulation grid spacing and
 timestep. See &lt;sup id="fnref:8">&lt;a href="#fn:8" class="footnote-ref" role="doc-noteref">8&lt;/a>&lt;/sup> for further details.&lt;br>
@@ -2160,33 +1928,6 @@ than normal properties from the code.&lt;/li>
 &lt;h1 id="next_section">Next section&lt;/h1>
 &lt;p>
 &lt;a href="/tutorial/input_deck_probe">The probe block&lt;/a>&lt;/p>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title/><link>/tutorial/input_deck_field_operator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/input_deck_field_operator/</guid><description>&lt;h1 id="example_deck_block">Example deck block&lt;/h1>
-&lt;pre>&lt;code class="language-perl">begin:field_operator
-name = field_op
-restrict:(dir_x, (x_max+x_min)/2, null)
-restrict:(dir_y, y_min + (y_max-y_min)/4, y_min + 3*(y_max-y_min)/4)
-restrict:(dir_modp, 1.0261218e-22, null)
-end:field_operator
-&lt;/code>&lt;/pre>
-&lt;h1 id="name">Name&lt;/h1>
-&lt;p>All field operator blocks must be named using the name key so that they
-can be referred to later&lt;/p>
-&lt;h1 id="restrict_keys">Restrict Keys&lt;/h1>
-&lt;p>Restrictions are specified using the restrict keyword and must have a
-specific form&lt;/p>
-&lt;pre>&lt;code class="language-perl"> restrict:(particle_property, min_val, max_val)
-&lt;/code>&lt;/pre>
-&lt;p>The first parameter is the
-&lt;a href="/tutorial/calculable_particle_properties">calculable particle
-property&lt;/a> that you wish
-to restrict the particle selection on The second parameter is the
-minimum value for that property. It may be the special value &amp;ldquo;null&amp;rdquo; if
-you do not wish to specify a lower bound for this restriction The third
-parameter is the maximum value for that property. It may be the special
-value &amp;ldquo;null&amp;rdquo; if you do not wish to specify an upper bound for this
-restriction&lt;/p>
-&lt;p>Any field block that has the restricted axis restricts that axis to run
-between the specified ranges.&lt;/p>
 &lt;!-- ######################## Cross references ######################## --></description></item><item><title/><link>/tutorial/input_deck_fields/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/input_deck_fields/</guid><description>&lt;p>This block contains information about the EM fields specified at the
 start of the simulation. See
 &lt;a href="/tutorial/input_deck">EPOCH input
@@ -2434,8 +2175,8 @@ multiple of the period, the result was to introduce spurious
 oscillations behind the pulse. If the laser had a finite phase shift so
 that the amplitude did not start at zero, a similar effect would be
 observed on the front of the pulse.&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/Pulse2.png" alt="A laser pulse with a sharp cutoff shows numerical artefacts behind thepulse.">&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/Pulse1.png" alt="A laser pulse with a smooth temporal profile shows noartefacts.">&lt;/p>
+&lt;p>&lt;img src="/img/Pulse2.png" alt="A laser pulse with a sharp cutoff shows numerical artefacts behind thepulse.">&lt;/p>
+&lt;p>&lt;img src="/img/Pulse1.png" alt="A laser pulse with a smooth temporal profile shows noartefacts.">&lt;/p>
 &lt;p>The second figure instead used a Gaussian window function with a
 characteristic width of 8fs as well as using &lt;em>t_end&lt;/em> to introduce a
 hard cutoff. It can clearly be seen that there are no spurious
@@ -2459,47 +2200,6 @@ includes a high order field solver to attempt to reduce this.&lt;/p>
 &lt;h1 id="next_section">Next section&lt;/h1>
 &lt;p>
 &lt;a href="/tutorial/input_deck_fields">The fields block&lt;/a>&lt;/p>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title/><link>/tutorial/input_deck_operator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/input_deck_operator/</guid><description>&lt;h1 id="example_deck_block">Example deck block&lt;/h1>
-&lt;pre>&lt;code class="language-perl">begin:operator
-name = restriction_op
-or = F # Should restrictions be combined with OR or AND?
-restrict:(dir_x, (x_max+x_min)/2, null)
-restrict:(dir_y, y_min + (y_max-y_min)/4, y_min + 3*(y_max-y_min)/4)
-restrict:(dir_modp, 1.0261218e-22, null)
-include : random_fraction(0.01)
-end:operator
-&lt;/code>&lt;/pre>
-&lt;h1 id="name">Name&lt;/h1>
-&lt;p>All operator blocks must be named using the name key so that they can be
-referred to later&lt;/p>
-&lt;h1 id="restrict_keys">Restrict Keys&lt;/h1>
-&lt;p>Restrictions are specified using the restrict keyword and must have a
-specific form&lt;/p>
-&lt;pre>&lt;code class="language-perl"> restrict:(particle_property, min_val, max_val)
-&lt;/code>&lt;/pre>
-&lt;p>The first parameter is the
-&lt;a href="/tutorial/calculable_particle_properties">calculable particle
-property&lt;/a> that you wish
-to restrict the particle selection on The second parameter is the
-minimum value for that property. It may be the special value &amp;ldquo;null&amp;rdquo; if
-you do not wish to specify a lower bound for this restriction The third
-parameter is the maximum value for that property. It may be the special
-value &amp;ldquo;null&amp;rdquo; if you do not wish to specify an upper bound for this
-restriction&lt;/p>
-&lt;p>All particles that have the specified property between the minimum and
-maximum value (except where such values are null) are accepted.
-Specifying both the upper and lower bounds as null is acceptable but is
-a null operation that merely slows down the output routines&lt;/p>
-&lt;h1 id="include_keys">Include Keys&lt;/h1>
-&lt;p>Include keys include more sophisticated particle selection routines,
-such as ID selections, random fractions etc. They are specified either
-by name or by using a particle operator constructor function such as
-random_fraction&lt;/p>
-&lt;h2 id="or">OR&lt;/h2>
-&lt;p>The &amp;ldquo;or&amp;rdquo; deck key specifies whether restrictions should be combined
-using AND or OR. If &amp;ldquo;or&amp;rdquo; is T then combination is by ORing the
-conditions, if &amp;ldquo;or&amp;rdquo; is false or absent then the combination is by
-ANDing the conditions&lt;/p>
 &lt;!-- ######################## Cross references ######################## --></description></item><item><title/><link>/tutorial/input_deck_output_block/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/input_deck_output_block/</guid><description>&lt;p>This block contains information about when and how to dump output files.
 See
 &lt;a href="/tutorial/input_deck">EPOCH input deck&lt;/a> for more information
@@ -3286,232 +2986,6 @@ more details of behaviour.\&lt;/p>
 &lt;h1 id="next_section">Next section&lt;/h1>
 &lt;p>
 &lt;a href="/tutorial/input_deck_window">The window block&lt;/a>&lt;/p>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title/><link>/tutorial/input_deck_pipeline/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/input_deck_pipeline/</guid><description>&lt;p>The new, more flexible output system in the Epoch 5.0 series is around
-the concept of a &amp;lsquo;pipeline&amp;rsquo;. These are designed to allow as much
-in-code data reduction as possible. A pipeline for outputting particle
-data lets you go through a series of selection steps so that you output
-only the particles you&amp;rsquo;re actually interested in. As in the older
-system, you can select by species or momentum, make a random selection,
-or track only those particles that have left the system. Unlike the
-older system, you can also produce much more complex selection operators
-such as tracking all those particles that started the simulation in a
-particular grid cell. Additionally, distributions functions have been
-made much more flexible, adding more axes and allowing you to directly
-output e.g. energy as a function of angle.&lt;/p>
-&lt;p>Pipelines start with a source of particles (usually the name of a
-species or probe), apply a series of operators to select some subset of
-these, and then produce a series of outputs, either raw particle data or
-derived variables such as number density on a grid. Grid based or
-distribution function outputs can be further processed to restrict in
-space, average over time, etc.&lt;/p>
-&lt;p>Everything that was possible under the old system remains possible, and
-decks should continue to work as before. More complex decks may benefit
-from rewriting in the new system.&lt;/p>
-&lt;h1 id="simple_outputs_in_old_and_new_systems">Simple outputs in old and new systems&lt;/h1>
-&lt;p>Before going through the details of the new pipelines, we show a few
-examples compared to the old system to illustrate the general structure
-and benefits.&lt;/p>
-&lt;p>A typical output using the old system is something like this, taken from
-the two-stream deck (tests/twostream/input.deck)&lt;/p>
-&lt;pre>&lt;code class="language-perl">begin:output
-... # Omitting dumptime specs etc
-# Properties at particle positions
-particles = always
-px = always
-# Properties on grid
-grid = always
-ex = always
-number_density = always + species
-end:output
-&lt;/code>&lt;/pre>
-&lt;p>We can reproduce this with pipelines&lt;/p>
-&lt;pre>&lt;code class="language-perl">begin:pipeline
-name = particles # Pipeline name, for use in output block where timings are set
-species : Left, Right # Do sum of Left and Right
-species : Left # Also output Left only
-species : Right # Also output Right only
-particle_variable : dir_px # Output px
-derived_variable : number_density # Built in number density output
-field_variable : io_ex # Output ex also
-end:pipeline
-&lt;/code>&lt;/pre>
-&lt;p>Doing more complex selection in the old system used the concept of
-subsets, such as&lt;/p>
-&lt;pre>&lt;code class="language-perl">begin:subset
-name = mysub
-random_fraction = 0.1
-include_species : Left
-include_species : Right
-end:subset
-begin:output
-... # Omitting dumptime specs etc
-# Properties on grid
-grid = always
-number_density = always + species + mysub
-end:output
-&lt;/code>&lt;/pre>
-&lt;p>which now becomes&lt;/p>
-&lt;pre>&lt;code class="language-perl">begin:pipeline
-name = particles
-species : Left
-species : Right
-particle_operator : random_fraction(0.1)
-derived_variable : number_density # Built in number density output
-end:pipeline
-&lt;/code>&lt;/pre>
-&lt;h1 id="a_more_complex_output">A more complex output&lt;/h1>
-&lt;p>The real power of the pipelines is to shorten and simplify relatively
-complex output specs using multiple selectors, which would previously
-have required multiple subsets. For instance, if we have multiple
-ionisation states, but the high-numbered ones contain very few
-particles, so we want to sum their number densities, we would have used
-something like&lt;/p>
-&lt;pre>&lt;code class="language-perl">begin:subset
-name = base
-random_fraction = 0.1
-include_species : Carbon
-end:subset
-begin:subset
-name = one
-random_fraction = 0.1
-include_species : Carbon1
-end:subset
-begin:subset
-name = two
-random_fraction = 0.1
-include_species : Carbon2
-end:subset
-begin:subset
-name = high
-random_fraction = 0.1
-include_species : Carbon3
-include_species : Carbon4
-include_species : Carbon5
-end:subset
-begin:output
-number_density = always + base + one + two + high + sum
-end:output
-&lt;/code>&lt;/pre>
-&lt;p>where with pipelines we can specify the species directly, as&lt;/p>
-&lt;pre>&lt;code class="language-perl">begin:pipeline
-name = particles
-species: Carbon
-species : Carbon1
-species : Carbon2
-species : Carbon3, Carbon4, Carbon5
-particle_operator : random_fraction(0.1)
-derived_variable : number_density
-end:pipeline
-&lt;/code>&lt;/pre>
-&lt;p>and it&amp;rsquo;s now far easier to add more selection criteria, such as a
-momentum lower bound etc.&lt;/p>
-&lt;h1 id="block_details">Block details&lt;/h1>
-&lt;p>A typical new output pipeline might look something like&lt;/p>
-&lt;pre>&lt;code class="language-perl">begin:pipeline
-name = pipe1
-species : electron
-species : electron, proton
-ejected_species : electron
-probe : probe1
-particle_operator : restriction_op
-particle_operator : random_fraction(0.01)
-particle_variable : dir_px
-particle_variable : dir_vz
-derived_variable : number_density # Built in number density output
-derived_variable : x_px_df # User specified distribution function specified by name
-field_variable : io_ex
-end:pipeline
-&lt;/code>&lt;/pre>
-&lt;p>This will create 4 sets of output, for electrons, the sum of electrons
-and protons, ejected electrons and for probe1. An unspecified
-restriction is applied, and a random fraction of 1% of the particles are
-used. Particle x momentum and z velocity are included in the output. It
-also outputs the number density for each species, a custom distribution
-function (see below) and the ex field.&lt;/p>
-&lt;p>The keys are described below. Note that most keys are optional, but:&lt;/p>
-&lt;ul>
-&lt;li>Name is a required key&lt;/li>
-&lt;li>If you don&amp;rsquo;t specify any [particle,derived,field]_variable keys
-nothing will be output&lt;/li>
-&lt;li>Operators are applied in the order specified. This should never
-change the output, but may have minor effects on memory and time
-taken&lt;/li>
-&lt;/ul>
-&lt;h3 id="name">Name&lt;/h3>
-&lt;p>All pipelines must be named using the name key. This is to allow them to
-be referred to in output blocks&lt;/p>
-&lt;h3 id="particle_sources">Particle sources&lt;/h3>
-&lt;p>Particle sources are specified using one of the following keys&lt;/p>
-&lt;ul>
-&lt;li>species - Named species or list of species to output. For each new
-species key a new output pipeline for just that species is created.
-If a comma separated list of species is specified then the output is
-calculated summed over that species&lt;/li>
-&lt;li>ejected_species - Named species to output. This outputs particle
-data for all particles that have left the domain going through any
-of the boundaries. Particles that remain in the domain after
-interacting with the boundary (such as through thermal or periodic
-boundaries) are not considered ejected. Particles that leave due to
-the moving window are not considered ejected.&lt;/li>
-&lt;li>probe - Named particle probe. All species specified in the probe are
-summed over for output&lt;/li>
-&lt;/ul>
-&lt;p>For all outputs except for field_variable outputs require at lest one
-particle source. No output will be generated if no particle sources are
-specified&lt;/p>
-&lt;h3 id="particle_operators">Particle operators&lt;/h3>
-&lt;p>Particle operators are specified with the particle_operator keyword and
-may be either the name of a
-&lt;a href="/tutorial/input_deck_operator">named operator
-block&lt;/a> or a constructor function
-for a particle operator (such as random_fraction)&lt;/p>
-&lt;h3 id="particle_variable_output">Particle variable output&lt;/h3>
-&lt;p>You can specify any
-&lt;a href="/tutorial/calculable_particle_properties">calculable particle
-property&lt;/a> known to
-EPOCH as a particle output variable. Simply specify the
-particle_variable key, followed by the named calculable particle
-property&lt;/p>
-&lt;h3 id="derived_variables">Derived variables&lt;/h3>
-&lt;p>A derived variable is any output that is ultimately derived from a
-particle source. This is either a user specified
-&lt;a href="/tutorial/input_deck_adf">advanced distribution
-function&lt;/a>, specified by name, or a
-built in named derived variable. All of the built in variables are
-defined on the main simulation grid. The build in derived variables are&lt;/p>
-&lt;ul>
-&lt;li>number_density - Output particle number density&lt;/li>
-&lt;li>temperature - Particle temperature&lt;/li>
-&lt;li>ekbar - Particle mean kinetic energy&lt;/li>
-&lt;li>mass_density - Mass density&lt;/li>
-&lt;li>charge_density - Charge density&lt;/li>
-&lt;li>particles_per_cell - Particles per cell diagnostic&lt;/li>
-&lt;li>px_bar - Mean x momentum in each cell&lt;/li>
-&lt;li>py_bar - Mean y momentum in each cell&lt;/li>
-&lt;li>pz_bar - Mean z momentum in each cell&lt;/li>
-&lt;li>modp_bar - Mean total momentum in each cell&lt;/li>
-&lt;li>vx_bar - Mean x velocity in each cell&lt;/li>
-&lt;li>vy_bar - Mean y velocity in each cell&lt;/li>
-&lt;li>vz_bar - Mean z velocity in each cell&lt;/li>
-&lt;li>modv_bar - Mean total velocity in each cell&lt;/li>
-&lt;/ul>
-&lt;h3 id="field_variables">Field variables&lt;/h3>
-&lt;p>A field variable is any output on a grid that is not derived from a
-particle source and are specified by name. The possible names are&lt;/p>
-&lt;ul>
-&lt;li>poynting_x - Poynting flux in X&lt;/li>
-&lt;li>poynting_y - Poynting flux in Y&lt;/li>
-&lt;li>poynting_z - Poynting flux in Z&lt;/li>
-&lt;li>io_ex - Ex field&lt;/li>
-&lt;li>io_ey - Ey field&lt;/li>
-&lt;li>io_ez - Ez field&lt;/li>
-&lt;li>io_bx - Bx field&lt;/li>
-&lt;li>io_by - By field&lt;/li>
-&lt;li>io_bz - Bz field&lt;/li>
-&lt;li>io_jx - Jx field&lt;/li>
-&lt;li>io_jy - Jy field&lt;/li>
-&lt;li>io_jy - Jz field&lt;/li>
-&lt;/ul>
 &lt;!-- ######################## Cross references ######################## --></description></item><item><title/><link>/tutorial/input_deck_probe/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/input_deck_probe/</guid><description>&lt;p>This block contains information about particle probes used for output.
 See
 &lt;a href="/tutorial/input_deck">EPOCH input deck&lt;/a> for more information
@@ -4291,7 +3765,7 @@ may occur on restart.&lt;/p>
 &lt;h1 id="next_section">Next section&lt;/h1>
 &lt;p>
 &lt;a href="/tutorial/input_deck_constant">The constant block&lt;/a>&lt;/p>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title/><link>/tutorial/input_deck_test_page/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/input_deck_test_page/</guid><description/></item><item><title/><link>/tutorial/input_deck_window/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/input_deck_window/</guid><description>&lt;p>This block contains information about the moving window if the code is
+&lt;!-- ######################## Cross references ######################## --></description></item><item><title/><link>/tutorial/input_deck_window/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/input_deck_window/</guid><description>&lt;p>This block contains information about the moving window if the code is
 used in that fashion. See
 &lt;a href="/tutorial/input_deck">EPOCH input
 deck&lt;/a> for more information on the input
@@ -4515,105 +3989,7 @@ using the supplied makefile.&lt;/p>
 &lt;h1 id="next_section">Next section&lt;/h1>
 &lt;p>
 &lt;a href="/tutorial/compiling"> Compiling EPOCH&lt;/a>&lt;/p>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title>License</title><link>/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/contact/</guid><description/></item><item><title>License</title><link>/license/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/license/</guid><description/></item><item><title/><link>/tutorial/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/links/</guid><description>&lt;h1 id="useful_links">Useful links&lt;/h1>
-&lt;p>
-&lt;a href="https://wci.llnl.gov/simulation/computer-codes/visit" target="_blank" rel="noopener">VisIt&lt;/a>&lt;br>
-&lt;a href="http://www.visitusers.org/" target="_blank" rel="noopener">VisIt user documentation&lt;/a>&lt;br>
-&lt;a href="http://gnudatalanguage.sourceforge.net/" target="_blank" rel="noopener">GDL&lt;/a>\&lt;/p>
-&lt;h1 id="references_in_the_manual">References in the manual&lt;/h1>
-&lt;p>Contemporary particle-in-cell approach to laser-plasma modelling &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/p>
-&lt;p>Buneman &lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>&lt;/p>
-&lt;p>Taflove and Hagness&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>&lt;/p>
-&lt;p>Roden and Gedney&lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup>&lt;/p>
-&lt;p>Sentoku and Kemp&lt;sup id="fnref:5">&lt;a href="#fn:5" class="footnote-ref" role="doc-noteref">5&lt;/a>&lt;/sup>&lt;/p>
-&lt;p>Duclous et al &lt;sup id="fnref:6">&lt;a href="#fn:6" class="footnote-ref" role="doc-noteref">6&lt;/a>&lt;/sup>&lt;/p>
-&lt;p>Ridgers et al &lt;sup id="fnref:7">&lt;a href="#fn:7" class="footnote-ref" role="doc-noteref">7&lt;/a>&lt;/sup>&lt;/p>
-&lt;p>Lehe et al &lt;sup id="fnref:8">&lt;a href="#fn:8" class="footnote-ref" role="doc-noteref">8&lt;/a>&lt;/sup>&lt;/p>
-&lt;p>Cowan et al &lt;sup id="fnref:9">&lt;a href="#fn:9" class="footnote-ref" role="doc-noteref">9&lt;/a>&lt;/sup>&lt;/p>
-&lt;p>Pukhov &lt;sup id="fnref:10">&lt;a href="#fn:10" class="footnote-ref" role="doc-noteref">10&lt;/a>&lt;/sup>&lt;/p>
-&lt;p>Blinne et al &lt;sup id="fnref:11">&lt;a href="#fn:11" class="footnote-ref" role="doc-noteref">11&lt;/a>&lt;/sup>&lt;/p>
-&lt;h1 id="references">References&lt;/h1>
-&lt;p>&lt;references />&lt;/p>
-&lt;section class="footnotes" role="doc-endnotes">
-&lt;hr>
-&lt;ol>
-&lt;li id="fn:1" role="doc-endnote">
-&lt;p>T D Arber, K Bennett, C S Brady, A Lawrence-Douglas, M G Ramsay, N
-J Sircombe, P Gillies, R G Evans, H Schmitz, A R Bell,
-&amp;ldquo;Contemporary particle-in-cell approach to laser-plasma
-modelling,&amp;rdquo; Plasma Physics and Controlled Fusion, 2015.
-&lt;a href="http://iopscience.iop.org/article/10.1088/0741-3335/57/11/113001/pdf" target="_blank" rel="noopener">link&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:2" role="doc-endnote">
-&lt;p>O. Buneman, &amp;ldquo;TRISTAN: The 3-D Electromagnetic Particle Code.&amp;rdquo; in
-Computer Space Plasma Physics: Simulations Techniques and Software,
-1993.
-&lt;a href="https://www.terrapub.co.jp/e-library/cspp/" target="_blank" rel="noopener">link&lt;/a>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:3" role="doc-endnote">
-&lt;p>A. Taflove and S. C. Hagness, Computational Electrodynamics: The
-Finite-Difference Time-Domain Method. Artech House,
-2000.
-&lt;a href="https://www.researchgate.net/publication/202924435_Computational_Electrodynamics_The_Finite-Difference_Time-Domain_Method" target="_blank" rel="noopener">link&lt;/a>&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:4" role="doc-endnote">
-&lt;p>J. Roden and S. Gedney, &amp;ldquo;Convolution pml (cpml): An efficient fdtd
-implementation of the cfs-pml for arbitrary media,&amp;rdquo; Microw. Opt.
-Technol. Lett.,
-2000.
-&lt;a href="https://www.researchgate.net/publication/228078114_Convolutional_PML_CPML_an_efficient_FDTD_implementation_of_the_CFS-PML_for_arbitrary_media" target="_blank" rel="noopener">link&lt;/a>&amp;#160;&lt;a href="#fnref:4" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:5" role="doc-endnote">
-&lt;p>Y. Sentoku and A. J. Kemp, &amp;ldquo;Numerical methods for particle
-simulations at extreme densities and temperatures: Weighted
-particles, relativistic collisions and reduced currents,&amp;rdquo; J. Comput.
-Phys., 2008.
-&lt;a href="http://www.sciencedirect.com/science/article/pii/S0021999108001988" target="_blank" rel="noopener">link&lt;/a>&amp;#160;&lt;a href="#fnref:5" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:6" role="doc-endnote">
-&lt;p>R. Duclous, J. G. Kirk, and A. R. Bell, &amp;ldquo;Monte carlo calculations
-of pair production in high-intensity laserplasma interactions,&amp;rdquo;
-Plasma Phys. Contr. F., vol. 53, no. 1, p. 015009,
-2011
-&lt;a href="http://iopscience.iop.org/article/10.1088/0741-3335/53/1/015009" target="_blank" rel="noopener">1&lt;/a>.&amp;#160;&lt;a href="#fnref:6" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:7" role="doc-endnote">
-&lt;p>C. P. Ridgers, J. G. Kirk, R. Duclous, T. G. Blackburn, C. S.
-Brady, K. Bennett, T. D. Arber, A. R. Bell, &amp;ldquo;Modelling gamma-ray
-photon emission and pair production in high-intensity laser&amp;ndash;matter
-interactions,&amp;rdquo; J. Comp. Phys., vol. 260, p. 273-285,
-2014
-&lt;a href="https://doi.org/10.1016/j.jcp.2013.12.007" target="_blank" rel="noopener">2&lt;/a>&amp;#160;&lt;a href="#fnref:7" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:8" role="doc-endnote">
-&lt;p>R. Lehe, A. Lifschitz, C. Thaury, V. Malka, and X. Davoine,
-&amp;ldquo;Numerical growth of emittance in simulations of laser-wakefield
-acceleration,&amp;rdquo; Phys. Rev. Accel. Beams, vol. 16, no. 2, p.021301,
-2013
-&lt;a href="https://www.researchgate.net/publication/258097872_Numerical_growth_of_emittance_in_simulations_of_laser-wakefield_acceleration" target="_blank" rel="noopener">3&lt;/a>.&amp;#160;&lt;a href="#fnref:8" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:9" role="doc-endnote">
-&lt;p>B. Cowan, D. Bruhwiler, J. Cary, E. Cormier-Michel, and C. Geddes,
-&amp;ldquo;Generalized algorithm for control of numerical dispersion in
-explicit time-domain electromagnetic simulations&amp;rdquo;, Phys. Rev.
-Accel. Beams, vol. 16, no. 4, p. 041303, 2013
-&lt;a href="https://journals.aps.org/prab/abstract/10.1103/PhysRevSTAB.16.041303" target="_blank" rel="noopener">4&lt;/a>.&amp;#160;&lt;a href="#fnref:9" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:10" role="doc-endnote">
-&lt;p>Pukhov, A., &amp;ldquo;Three-dimensional electromagnetic relativistic
-particle-in-cell code VLPL (Virtual Laser Plasma Lab)&amp;rdquo;, J. Plasma
-Phys., vol. 61, no. 3, p. 425, 1999
-&lt;a href="https://www.cambridge.org/core/journals/journal-of-plasma-physics/article/three-dimensional-electromagnetic-relativistic-particle-in-cell-code-vlpl-virtual-laser-plasma-lab/7FBA476D599E2F19DFEA3F0F2F84FFAB" target="_blank" rel="noopener">5&lt;/a>.&amp;#160;&lt;a href="#fnref:10" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:11" role="doc-endnote">
-&lt;p>A. Blinne, D. Schinkel, S. Kuschel, N. Elkina, S. G. Rykovanov,
-and M. Zepf, &amp;ldquo;A systematic approach to numerical dispersion in
-Maxwell solvers&amp;rdquo;, Computer Physics Communications, 00104655,
-2017
-&lt;a href="https://arxiv.org/pdf/1710.06829.pdf" target="_blank" rel="noopener">6&lt;/a>&amp;#160;&lt;a href="#fnref:11" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/section></description></item><item><title/><link>/tutorial/maths_parser/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/maths_parser/</guid><description>&lt;p>A discussion of the input deck for EPOCH would not be complete without
+&lt;!-- ######################## Cross references ######################## --></description></item><item><title>License</title><link>/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/contact/</guid><description/></item><item><title>License</title><link>/license/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/license/</guid><description/></item><item><title/><link>/tutorial/maths_parser/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/maths_parser/</guid><description>&lt;p>A discussion of the input deck for EPOCH would not be complete without
 consideration of the maths parser. The maths parser is the code which
 reads the input decks. The parser makes it possible that any parameter
 taking a numerical value (integer or real) can be input as a
@@ -5925,7 +5301,7 @@ system. The code &lt;code>plt.ion()&lt;/code> sets matplotlib to interactive mod
 control will be returned to you as soon as the plot has finished
 drawing.&lt;/p>
 &lt;p>
-&lt;a href="/tutorial/img/Matplotlib1D_screenshot.png">Example 1D plot generated by sdf_helper.plot_auto&lt;/a>&lt;/p>
+&lt;a href="/img/Matplotlib1D_screenshot.png">Example 1D plot generated by sdf_helper.plot_auto&lt;/a>&lt;/p>
 &lt;p>Plotting a 2D function is the same basic idea, and the code&lt;/p>
 &lt;pre>&lt;code class="language-python">import sdf_helper as sh
 import matplotlib.pyplot as plt
@@ -5933,7 +5309,7 @@ plt.ion()
 data=sh.getdata('Data/0010.sdf')
 sh.plot_auto(data.dist_fn_x_px_Right, iso=0)
 &lt;/code>&lt;/pre>
-&lt;p>&lt;img src="/tutorial/img/Matplotlib2D.png" alt=" thumb \| 200px \| Example 2D plot generated bysdf_helper.plot_auto">&lt;/p>
+&lt;p>&lt;img src="/img/Matplotlib2D.png" alt=" thumb \| 200px \| Example 2D plot generated bysdf_helper.plot_auto">&lt;/p>
 &lt;p>will produce the figure on the right. The procedure for variables from
 EPOCH2D data is exactly the same.&lt;/p>
 &lt;h3 id="changing_colour_tables">Changing colour tables&lt;/h3>
@@ -6190,7 +5566,7 @@ comprehensive array of documentation. This can be accessed by typing
 % ONLINE_HELP: Starting the online help browser.
 IDL&amp;amp;gt;
 &lt;/code>&lt;/pre>
-&lt;p>&lt;img src="/tutorial/img/Idl_help.png" alt="The IDL help browser">&lt;/p>
+&lt;p>&lt;img src="/img/Idl_help.png" alt="The IDL help browser">&lt;/p>
 &lt;p>The documentation is divided into books aimed at users or developers and
 is fully searchable and cross indexed.&lt;/p>
 &lt;h1 id="manipulating_and_plotting_data">Manipulating And Plotting Data&lt;/h1>
@@ -6230,7 +5606,7 @@ example:&lt;/p>
 &lt;pre>&lt;code>IDL&amp;amp;gt; plot,[1,2,3],[2,2,5]
 &lt;/code>&lt;/pre>
 &lt;p>Gives rise to the following plot:&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/Idl_simple_plot.png" alt="A simple IDL plot">&lt;/p>
+&lt;p>&lt;img src="/img/Idl_simple_plot.png" alt="A simple IDL plot">&lt;/p>
 &lt;p>As a more concrete example, we will now take a one-dimensional slice
 through the 2D array &amp;ldquo;Number Density&amp;rdquo; read in from our SDF data file. In
 this example we will give the $x$ and $y$ axes labels by passing extra
@@ -6242,7 +5618,7 @@ IDL&amp;amp;gt; plot,data.x,data.number_density[*,256],xtitle='x', $
 IDL&amp;amp;gt; ytitle='number density'
 &lt;/code>&lt;/pre>
 &lt;p>This command generates the following plot:&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/Idl_plot.png" alt="A slice of a 2D array">&lt;/p>
+&lt;p>&lt;img src="/img/Idl_plot.png" alt="A slice of a 2D array">&lt;/p>
 &lt;h1 id="postscript_plots">Postscript Plots&lt;/h1>
 &lt;p>The plots shown so far have just been screen-shots of the interactive
 IDL plotting window. These are fairly low quality and could included as
@@ -6267,7 +5643,7 @@ IDL&amp;amp;gt; set_plot,'x'
 &lt;/code>&lt;/pre>
 &lt;p>This set of commands results in the following plot being written to a
 file named &amp;ldquo;out.ps&amp;rdquo;.&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/Idl_ps_plot.png" alt="A simple PS plot">&lt;/p>
+&lt;p>&lt;img src="/img/Idl_ps_plot.png" alt="A simple PS plot">&lt;/p>
 &lt;p>By default, IDL draws its own set of fonts called &amp;ldquo;Hershey vector
 fonts&amp;rdquo;. Much better looking results can be obtained by using a
 postscript font instead. These options are passed as parameters to the
@@ -6298,7 +5674,7 @@ IDL&amp;amp;gt; levels=levels,/fill,c_colors=colors
 &lt;p>Issuing these commands gives us the contour plot shown below. Note that
 the colour table used is not the default one but has been constructed to
 be similar to the one used by VisIt.&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/Idl_contour.png" alt="A simple contour plot">&lt;/p>
+&lt;p>&lt;img src="/img/Idl_contour.png" alt="A simple contour plot">&lt;/p>
 &lt;h1 id="shaded_surface_plots_in_idl">Shaded Surface Plots in IDL&lt;/h1>
 &lt;p>Another method for visualising 2D datasets is to produce a 3D plot in
 which the data is elevated in the $z$ direction by a height proportional
@@ -6312,7 +5688,7 @@ colour table which is&amp;quot;RED_TEMPERATURE&amp;quot;.&lt;/p>
 IDL&amp;amp;gt; shade_surf,data.number_density,data.x,data.y,xstyle=1, $
 IDL&amp;amp;gt; ystyle=1,xtitle='x',ytitle='y',ztitle='number density',charsize=3
 &lt;/code>&lt;/pre>
-&lt;p>&lt;img src="/tutorial/img/Idl_shade_surf.png" alt="A shaded surface plot">&lt;/p>
+&lt;p>&lt;img src="/img/Idl_shade_surf.png" alt="A shaded surface plot">&lt;/p>
 &lt;h1 id="interactive_plotting">Interactive Plotting&lt;/h1>
 &lt;p>Finally, in recent versions of IDL (not GDL) it is now possible to
 perform all of these plot types in an interactive graphical user
@@ -6320,7 +5696,7 @@ interface. The corresponding procedures are launched with the commands
 &lt;strong>iplot&lt;/strong>, &lt;strong>icontour&lt;/strong> and &lt;strong>isurface&lt;/strong>.&lt;/p>
 &lt;pre>&lt;code>IDL&amp;amp;gt; iplot,data.x,data.number_density[*,256]
 &lt;/code>&lt;/pre>
-&lt;p>&lt;img src="/tutorial/img/Idl_iplot.png" alt="Interactive plotting">&lt;/p>
+&lt;p>&lt;img src="/img/Idl_iplot.png" alt="Interactive plotting">&lt;/p>
 &lt;p>IDL is an extremely useful tool but it also comes with a fairly hefty
 price tag. If you are not part of an organisation that will buy it for
 you then you may wish to look into a free alternative. It is also a
@@ -6373,7 +5749,7 @@ datasets&lt;/li>
 &lt;p>Both the source code and pre-compiled binaries are available for
 download from the projects web page which is found at the URL
 &lt;a href="https://wci.llnl.gov/simulation/computer-codes/visit">https://wci.llnl.gov/simulation/computer-codes/visit&lt;/a>&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/Visit_web.png" alt="The LLNL VisIT website">&lt;/p>
+&lt;p>&lt;img src="/img/Visit_web.png" alt="The LLNL VisIT website">&lt;/p>
 &lt;p>There are full instructions for compiling the project from source code
 along with build scripts written to help ease the process. However, this
 is not recommended as it is an extremely large tool and the compilation
@@ -6436,7 +5812,7 @@ installed on the local machine. This is particularly useful when using a
 Windows environment to analyse data located on a remote UNIX
 workstation.&lt;/p>
 &lt;h1 id="loading_data_into_visit">Loading Data Into VisIt&lt;/h1>
-&lt;p>&lt;img src="/tutorial/img/Visit_db_list.png" alt="The VisIt load databasedialog">&lt;/p>
+&lt;p>&lt;img src="/img/Visit_db_list.png" alt="The VisIt load databasedialog">&lt;/p>
 &lt;p>The most straightforward method for loading data into VisIt is to start
 the application and then browse the filesystem for the dataset you are
 interested in. This is done by selecting &amp;ldquo;File ⇒ Open file&amp;rdquo; from the
@@ -6458,7 +5834,7 @@ in a virtual database.&lt;/p>
 &lt;p>Yet another method for selecting the dataset to use is by opening a
 previously saved session file. We will discuss this further in a later
 section.&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/Visit_select_var.png" alt="The Visit select plot type and variabledropdown">&lt;/p>
+&lt;p>&lt;img src="/img/Visit_select_var.png" alt="The Visit select plot type and variabledropdown">&lt;/p>
 &lt;p>Once an SDF file has been successfully loaded the &amp;ldquo;Add&amp;rdquo; menu item will
 become un-greyed and the cycle numbers for each file in the virtual
 database will be displayed. If we navigate to one of the plot types we
@@ -6481,7 +5857,7 @@ select this item since it only generates a contour plot with lines
 indicating each contour level and not a filled version. Instead we
 choose &amp;ldquo;Add ⇒ Pseudocolor ⇒ Derived ⇒ Number Density&amp;rdquo; and then hit the
 &amp;ldquo;Draw&amp;rdquo; button.&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/Visit_contour.png" alt=" VisIT contour plotoutput">&lt;/p>
+&lt;p>&lt;img src="/img/Visit_contour.png" alt=" VisIT contour plotoutput">&lt;/p>
 &lt;p>There are many settings which can alter the visual appearance of plots
 generated by VisIt. The first point of call is usually to open up the
 &amp;ldquo;Plot Attributes&amp;rdquo; or &amp;ldquo;Operator Attributes&amp;rdquo; dialogue corresponding to the
@@ -6493,12 +5869,12 @@ arrow on the left hand side of the plot in the main VisIt menu pane.
 This will drop down to reveal a list containing the plot and all
 operators acting on it. Double-clicking on an operator will launch the
 corresponding &amp;ldquo;Operator Attributes&amp;rdquo; dialogue.&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/Visit_attrib.png" alt="image">&lt;/p>
+&lt;p>&lt;img src="/img/Visit_attrib.png" alt="image">&lt;/p>
 &lt;p>Another important tool for controlling the appearance of plots can be
 found in &amp;ldquo;Controls ⇒ Annotation&amp;rdquo; from the VisIt menu bar. This allows
 all of the plot annotations to be modified such as the legend, title,
 axis labels, etc.&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/Visit_annot.png" alt="The VisIT annotationsdialog">&lt;/p>
+&lt;p>&lt;img src="/img/Visit_annot.png" alt="The VisIT annotationsdialog">&lt;/p>
 &lt;h1 id="d_plotting_in_visit">1D Plotting in VisIt&lt;/h1>
 &lt;p>A 1D plot in VisIt is called a &amp;ldquo;Curve&amp;rdquo; plot. We already mentioned that
 this was greyed out because we have no one dimensional variables in our
@@ -6507,11 +5883,11 @@ data file.&lt;/p>
 one dimensional array from a 2D or 3D variable. This operator is
 selected by pressing the button with red and blue lines located at the
 top of the plot window.&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/Visit_lineout.png" alt="image">&lt;/p>
+&lt;p>&lt;img src="/img/Visit_lineout.png" alt="image">&lt;/p>
 &lt;p>Once the button has been pressed, we can click and drag anywhere in the
 &amp;ldquo;Pseudocolor&amp;rdquo; plot window. When we release the mouse button a new plot
 window pops up containing a &amp;ldquo;Curve&amp;rdquo; plot of the data just selected.&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/Visit_curve.png" alt="VisIt curve plot example">&lt;/p>
+&lt;p>&lt;img src="/img/Visit_curve.png" alt="VisIt curve plot example">&lt;/p>
 &lt;p>In order to change the attributes for this plot, we must first select
 Active window&amp;quot; number 2 in the main VisIt pane.&lt;/p>
 &lt;h1 id="shaded_surface_plots_in_visit">Shaded Surface Plots in VisIt&lt;/h1>
@@ -6524,7 +5900,7 @@ did before. Next select the &amp;ldquo;Operator Attributes ⇒ Transforms ⇒ El
 menu item. In the pop up dialogue click on the &amp;ldquo;Elevation height
 relative to XY limits?&amp;rdquo; and then &amp;ldquo;Apply&amp;rdquo;. Click &amp;ldquo;Yes&amp;rdquo; when the warning
 dialogue pops up.&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/Visit_shade_surf.png" alt="VisIt shaded surfaceplots">&lt;/p>
+&lt;p>&lt;img src="/img/Visit_shade_surf.png" alt="VisIt shaded surfaceplots">&lt;/p>
 &lt;p>To make this plot look similar to the one generated by IDL, we have
 changed the colour table using &amp;ldquo;Controls ⇒ Color table&amp;rdquo;. We also changed
 the axis appearance with the annotations menu discussed earlier and
@@ -6539,7 +5915,7 @@ this variable behaves in exactly the same way as any of the variables
 read from the data file.&lt;/p>
 &lt;p>As an example, we can combine the three components of electric field to
 generate a single electric field vector.&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/Visit_expression_vector.png" alt=" VisIT expression dialog showing an example vectorexpression">&lt;/p>
+&lt;p>&lt;img src="/img/Visit_expression_vector.png" alt=" VisIT expression dialog showing an example vectorexpression">&lt;/p>
 &lt;p>Now when we return to the &amp;ldquo;Add&amp;rdquo; menu we see that the &amp;ldquo;Vector&amp;rdquo; and
 &amp;ldquo;Streamline&amp;rdquo; and plot types now have an entry for our newly defined
 vector.&lt;/p>
@@ -6569,7 +5945,7 @@ format such as &amp;ldquo;PNG&amp;rdquo; to save to rather than &amp;ldquo;MPEG&
 generate one image per frame and number them consecutively. At the end
 of the process the images can be converted into a movie using whatever
 tool best accomplishes the task.&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/Visit_movie.png" alt="VisIt create moviedialog">&lt;/p>
+&lt;p>&lt;img src="/img/Visit_movie.png" alt="VisIt create moviedialog">&lt;/p>
 &lt;p>Another useful tip is to select the &amp;ldquo;Later, tell me the command to run&amp;rdquo;
 radio button. This will output a long command which can run from a UNIX
 terminal screen. The advantage is that no X session is required so the
@@ -6612,7 +5988,7 @@ list of pre-defined host profiles. These are unnecessary for anyone not
 affiliated and can safely be removed by deleting the directory
 &lt;code>$HOME/visit/current/.visit&lt;/code> (assuming you have unpacked the VisIt
 tarball into your home directory).&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/Visit_host_profile.png" alt="VisIT remote host configurationdialog">&lt;/p>
+&lt;p>&lt;img src="/img/Visit_host_profile.png" alt="VisIT remote host configurationdialog">&lt;/p>
 &lt;p>Create a new profile by clicking on the &amp;ldquo;New Host&amp;rdquo; button and filling
 out some of the form fields. The important ones to change are &amp;ldquo;Host
 nickname&amp;rdquo;, &amp;ldquo;Remote host name&amp;rdquo;, &amp;ldquo;Host name aliases&amp;rdquo; and &amp;ldquo;Username&amp;rdquo;. If
@@ -6629,7 +6005,7 @@ selection procedure but now displaying files located on the remote
 machine rather than the local one. From this point on everything should
 work as before except you should see the name of the remote machine in
 the &amp;ldquo;Selected files&amp;rdquo; dialogue.&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/Visit_host_files.png" alt=" VisIT load file dialog showing files on remotehost">&lt;/p>
+&lt;p>&lt;img src="/img/Visit_host_files.png" alt=" VisIT load file dialog showing files on remotehost">&lt;/p>
 &lt;h1 id="parallel_visualisation">Parallel Visualisation&lt;/h1>
 &lt;p>Parallel visualisation is performed in almost exactly the same manner as
 remote visualisation. Again, you must create a host profile for the
@@ -6648,14 +6024,7 @@ arguments to use.&lt;/p>
 the &amp;ldquo;User documentation&amp;rdquo; section provided at
 &lt;a href="http://www.visitusers.org" target="_blank" rel="noopener">1&lt;/a> . Of particular help here is the &amp;ldquo;Getting
 VisIt to run in parallel&amp;rdquo; section and the &amp;ldquo;How VisIt Launching works&amp;rdquo;
-entry in the &amp;ldquo;Developer documentation&amp;rdquo; section.&lt;/p></description></item><item><title/><link>/tutorial/sidebar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/sidebar/</guid><description>&lt;ul>
-&lt;li>navigation
-&lt;ul>
-&lt;li>&lt;a href="https://cfsa-pmw.warwick.ac.uk/EPOCH/epoch">https://cfsa-pmw.warwick.ac.uk/EPOCH/epoch&lt;/a> | Back to GitLab!&lt;/li>
-&lt;li>:Landing_Page| Back to Landing Page&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul></description></item><item><title/><link>/tutorial/structure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/structure/</guid><description>&lt;p>When obtained, the EPOCH codes all have a similar structure. If the
+entry in the &amp;ldquo;Developer documentation&amp;rdquo; section.&lt;/p></description></item><item><title/><link>/tutorial/structure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/tutorial/structure/</guid><description>&lt;p>When obtained, the EPOCH codes all have a similar structure. If the
 tarred and gzipped archive (commonly referred to as a tarball) is
 downloaded and unpacked into the user&amp;rsquo;s &lt;code>$HOME&lt;/code> directory, then the
 extracted contents will consist of a directory named
@@ -7205,8 +6574,8 @@ have a profile in y and z. Since 3D lasers are very similar to 2D
 lasers, they will not be considered here in greater detail, but in 3D,
 it is possible to freely specify the laser profile across the entire
 face where a laser is attached.&lt;br>
-&lt;img src="/tutorial/img/Profile_flat.png" alt="Uniform laser profile inEPOCH2D">
-&lt;img src="/tutorial/img/Profile_gauss.png" alt="Gaussian laser profile inEPOCH2D">&lt;/p>
+&lt;img src="/img/Profile_flat.png" alt="Uniform laser profile inEPOCH2D">
+&lt;img src="/img/Profile_gauss.png" alt="Gaussian laser profile inEPOCH2D">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;code>phase&lt;/code> - Phase shift for the laser in radians. This is a
@@ -7234,8 +6603,8 @@ there will be artefacts on the scale of the grid for lasers driven
 at an angle.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="/tutorial/img/Profile_angle.png" alt="Laser propagating at an angle inEPOCH2D">
-&lt;img src="/tutorial/img/Wave_angle.png" alt="Schematic diagram of a laser propagating at an angle in2D">&lt;/p>
+&lt;p>&lt;img src="/img/Profile_angle.png" alt="Laser propagating at an angle inEPOCH2D">
+&lt;img src="/img/Wave_angle.png" alt="Schematic diagram of a laser propagating at an angle in2D">&lt;/p>
 &lt;p>Using this technique it is also possible to focus a laser. This is done
 by using the same technique as above but making the angle of
 propagation, $\theta$, a function of $y$ such that the laser is focused
@@ -7531,7 +6900,7 @@ directory. To work through the examples, you must download an input deck
 from the section below to the directory you want EPOCH to use and rename
 the file &amp;ldquo;input.deck&amp;rdquo;. Throughout this guide we will assume that you use
 the directory named &amp;ldquo;Data&amp;rdquo;.&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/EPOCH_Splash.png" alt="The EPOCH1D splash page">&lt;/p>
+&lt;p>&lt;img src="/img/EPOCH_Splash.png" alt="The EPOCH1D splash page">&lt;/p>
 &lt;h3 id="getting_the_example_decks_for_this_workshop">Getting the example decks for this workshop&lt;/h3>
 &lt;p>The example input decks used in this workshop can be downloaded using
 the following links. Create a directory &amp;ldquo;~/EXAMPLES&amp;rdquo; to put them in:&lt;/p>
@@ -7683,7 +7052,7 @@ that the function would normally be a sine wave, but this has been
 shifted by pi/2 because the &amp;ldquo;phase&amp;rdquo; parameter was used. The blue line
 shows the laser amplitude generated when the &amp;ldquo;t_profile&amp;rdquo; gaussian
 profile is applied.&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/WorkshopLaser.png" alt="The laser profile">&lt;/p>
+&lt;p>&lt;img src="/img/WorkshopLaser.png" alt="The laser profile">&lt;/p>
 &lt;h3 id="the_output_block">The Output Block&lt;/h3>
 &lt;p>The final addition is the &amp;ldquo;output&amp;rdquo; block. We will cover this in more
 detail later. For now, it is sufficient to know that this is the block
@@ -7759,7 +7128,7 @@ NPTS LONG Array[1]
 &lt;p>This is the node-centred grid along with its metadata. The cell-centred
 array shown previously is derived from this. Finally, the HEADER entry
 contains metadata about the code and runtime information.&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/WorkshopLaserGDL.png" alt="An example GDLplot">&lt;/p>
+&lt;p>&lt;img src="/img/WorkshopLaserGDL.png" alt="An example GDLplot">&lt;/p>
 &lt;p>The above plot can be generated by issuing the following command:
 &lt;code>plot,data.x,data.ey.data&lt;/code> There are more examples on using idl/gdl in
 the
@@ -7811,7 +7180,7 @@ xc(200,) = grid_mid
 axis labels. To use this type:&lt;/p>
 &lt;pre>&lt;code class="language-python">plot_auto(data.Electric_Field_Ey)
 &lt;/code>&lt;/pre>
-&lt;p>&lt;img src="/tutorial/img/WorkshopLaserPython.png" alt="An example Pythonplot">&lt;/p>
+&lt;p>&lt;img src="/img/WorkshopLaserPython.png" alt="An example Pythonplot">&lt;/p>
 &lt;h3 id="loading_the_data_into_visit">Loading the data into VisIt&lt;/h3>
 &lt;p>EPOCH comes with an SDF reader plugin for the VisIt parallel
 visualization tool. In order to use it, you must first compile the
@@ -7827,7 +7196,7 @@ VisIt and open the specified data file on startup. Alternatively, you
 can browse for the file to open using the &amp;ldquo;Open&amp;rdquo; button. All the SDF
 files in a directory will be grouped together with a green &amp;ldquo;DB&amp;rdquo; icon and
 the name &amp;ldquo;*.sdf database&amp;rdquo;.&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/WorkshopLaserVisit.png" alt="An example VisItplot">&lt;/p>
+&lt;p>&lt;img src="/img/WorkshopLaserVisit.png" alt="An example VisItplot">&lt;/p>
 &lt;p>You can then plot a quantity by pressing the &amp;ldquo;Add&amp;rdquo; button, selecting the
 type of plot and the variable to use for the plot. When the plot has
 been selected, press the &amp;ldquo;Draw&amp;rdquo; button to render it to screen. The plot
@@ -7939,7 +7308,7 @@ they have been assigned.&lt;/p>
 lower and upper boundaries in the y-direction, &amp;ldquo;bc_y_min&amp;rdquo;,
 &amp;ldquo;bc_y_max&amp;rdquo;. These have both been set to &amp;ldquo;periodic&amp;rdquo; so that the field
 at the top of the domain wraps around to the bottom of the domain.&lt;/p>
-&lt;p>&lt;img src="/tutorial/img/Workshop2DLaserVisIt.png" alt="2D laser plot withVisIt">&lt;/p>
+&lt;p>&lt;img src="/img/Workshop2DLaserVisIt.png" alt="2D laser plot withVisIt">&lt;/p>
 &lt;p>Next, we introduce a new block type, &amp;ldquo;constant&amp;rdquo;. This block defines
 named variables which can be arbitrary mathematical expressions. Once
 defined, these can be used on the left-hand side of name-value pairs in
@@ -7957,7 +7326,7 @@ all points along the boundary. When the laser is attached to &amp;ldquo;y_min&am
 &lt;p>Finally, the output block has been modified so that it outputs all
 electromagnetic field components.&lt;/p>
 &lt;p>The result of plotting &amp;ldquo;Add-&amp;gt;Pseudocolor-&amp;gt;Electric Field-&amp;gt;Ey&amp;rdquo; in
-VisIt is shown above. &lt;img src="/tutorial/img/Workshop2DLaserMatplot.png" alt="2D laser plot withMatplotlib">&lt;/p>
+VisIt is shown above. &lt;img src="/img/Workshop2DLaserMatplot.png" alt="2D laser plot withMatplotlib">&lt;/p>
 &lt;p>The laser block also contains a commented-out &amp;ldquo;phase&amp;rdquo; entry. Unlike in
 the 1D version seen previously, this is a function of Y, like the
 &amp;ldquo;profile&amp;rdquo; parameter. Uncommenting this line and re-running the deck will
@@ -8058,8 +7427,8 @@ domain and is used to give the particles an average momentum drift in
 the x-direction. There are similar &amp;ldquo;drift_y&amp;rdquo; and &amp;ldquo;drift_z&amp;rdquo; parameters.&lt;/p>
 &lt;p>This deck has been designed to simulate a two-stream instability, so it
 has two groups of particles which are identical in every respect except
-that one set is drifting in the opposite direction to the other. &lt;img src="/tutorial/img/WorkshopTwoStreamPython.png" alt="Thetwo-stream instability inMatplotlib">
-&lt;img src="/tutorial/img//tutorial/img/WorkshopTwoStreamGDL.png" alt="The two-stream instability in GDL">&lt;/p>
+that one set is drifting in the opposite direction to the other. &lt;img src="/img/WorkshopTwoStreamPython.png" alt="Thetwo-stream instability inMatplotlib">
+&lt;img src="/img//img/WorkshopTwoStreamGDL.png" alt="The two-stream instability in GDL">&lt;/p>
 &lt;p>In the output block we have added a couple of parameters for outputting
 particle data. The first parameter, &amp;ldquo;particles&amp;rdquo;, outputs the grid on
 which the particles are defined. There are two different types of
