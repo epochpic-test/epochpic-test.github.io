@@ -525,7 +525,7 @@ shown in the Figure. Full control over these coefficients can be
 achieved by specifying &amp;ldquo;custom&amp;rdquo; for the &amp;ldquo;maxwell_solver&amp;rdquo; parameter in
 the control block and then supplying a &amp;ldquo;stencil&amp;rdquo; block to provide the
 desired coefficient values.&lt;/p>
-&lt;p>&lt;img src="/img/Stencil.png" alt="Coefficient locations for the B_z field computational stencil in2D.">
+&lt;p>&lt;img src="../Stencil.png" alt="Coefficient locations for the B_z field computational stencil in2D.">
 This option allows the user to specify an extended stencil scheme that
 has been specifically optimised for the simulation grid spacing and
 timestep. See &lt;sup id="fnref:8">&lt;a href="#fn:8" class="footnote-ref" role="doc-noteref">8&lt;/a>&lt;/sup> for further details.
@@ -1414,8 +1414,8 @@ multiple of the period, the result was to introduce spurious
 oscillations behind the pulse. If the laser had a finite phase shift so
 that the amplitude did not start at zero, a similar effect would be
 observed on the front of the pulse.&lt;/p>
-&lt;p>&lt;img src="/img/Pulse2.png" alt="A laser pulse with a sharp cutoff shows numerical artefacts behind thepulse.">&lt;/p>
-&lt;p>&lt;img src="/img/Pulse1.png" alt="A laser pulse with a smooth temporal profile shows noartefacts.">&lt;/p>
+&lt;p>&lt;img src="../Pulse2.png" alt="A laser pulse with a sharp cutoff shows numerical artefacts behind thepulse.">&lt;/p>
+&lt;p>&lt;img src="../Pulse1.png" alt="A laser pulse with a smooth temporal profile shows noartefacts.">&lt;/p>
 &lt;p>The second figure instead used a Gaussian window function with a
 characteristic width of 8fs as well as using &lt;em>t_end&lt;/em> to introduce a
 hard cutoff. It can clearly be seen that there are no spurious

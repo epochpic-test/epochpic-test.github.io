@@ -1044,7 +1044,7 @@ shown in the Figure. Full control over these coefficients can be
 achieved by specifying &amp;ldquo;custom&amp;rdquo; for the &amp;ldquo;maxwell_solver&amp;rdquo; parameter in
 the control block and then supplying a &amp;ldquo;stencil&amp;rdquo; block to provide the
 desired coefficient values.&lt;/p>
-&lt;p>&lt;img src="/img/Stencil.png" alt="Coefficient locations for the B_z field computational stencil in2D.">
+&lt;p>&lt;img src="../Stencil.png" alt="Coefficient locations for the B_z field computational stencil in2D.">
 This option allows the user to specify an extended stencil scheme that
 has been specifically optimised for the simulation grid spacing and
 timestep. See &lt;sup id="fnref:8">&lt;a href="#fn:8" class="footnote-ref" role="doc-noteref">8&lt;/a>&lt;/sup> for further details.
@@ -1933,8 +1933,8 @@ multiple of the period, the result was to introduce spurious
 oscillations behind the pulse. If the laser had a finite phase shift so
 that the amplitude did not start at zero, a similar effect would be
 observed on the front of the pulse.&lt;/p>
-&lt;p>&lt;img src="/img/Pulse2.png" alt="A laser pulse with a sharp cutoff shows numerical artefacts behind thepulse.">&lt;/p>
-&lt;p>&lt;img src="/img/Pulse1.png" alt="A laser pulse with a smooth temporal profile shows noartefacts.">&lt;/p>
+&lt;p>&lt;img src="../Pulse2.png" alt="A laser pulse with a sharp cutoff shows numerical artefacts behind thepulse.">&lt;/p>
+&lt;p>&lt;img src="../Pulse1.png" alt="A laser pulse with a smooth temporal profile shows noartefacts.">&lt;/p>
 &lt;p>The second figure instead used a Gaussian window function with a
 characteristic width of 8fs as well as using &lt;em>t_end&lt;/em> to introduce a
 hard cutoff. It can clearly be seen that there are no spurious
@@ -4212,8 +4212,8 @@ have a profile in y and z. Since 3D lasers are very similar to 2D
 lasers, they will not be considered here in greater detail, but in 3D,
 it is possible to freely specify the laser profile across the entire
 face where a laser is attached.
-&lt;img src="/img/Profile_flat.png" alt="Uniform laser profile inEPOCH2D">
-&lt;img src="/img/Profile_gauss.png" alt="Gaussian laser profile inEPOCH2D">&lt;/p>
+&lt;img src="../Profile_flat.png" alt="Uniform laser profile inEPOCH2D">
+&lt;img src="../Profile_gauss.png" alt="Gaussian laser profile inEPOCH2D">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;code>phase&lt;/code> - Phase shift for the laser in radians. This is a
@@ -4241,8 +4241,8 @@ there will be artefacts on the scale of the grid for lasers driven
 at an angle.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="/img/Profile_angle.png" alt="Laser propagating at an angle inEPOCH2D">
-&lt;img src="/img/Wave_angle.png" alt="Schematic diagram of a laser propagating at an angle in2D">&lt;/p>
+&lt;p>&lt;img src="../Profile_angle.png" alt="Laser propagating at an angle inEPOCH2D">
+&lt;img src="../Wave_angle.png" alt="Schematic diagram of a laser propagating at an angle in2D">&lt;/p>
 &lt;p>Using this technique it is also possible to focus a laser. This is done
 by using the same technique as above but making the angle of
 propagation, $\theta$, a function of $y$ such that the laser is focused
@@ -5147,7 +5147,7 @@ comprehensive array of documentation. This can be accessed by typing
 % ONLINE_HELP: Starting the online help browser.
 IDL&amp;amp;gt;
 &lt;/code>&lt;/pre>
-&lt;p>&lt;img src="/img/Idl_help.png" alt="The IDL help browser">&lt;/p>
+&lt;p>&lt;img src="../Idl_help.png" alt="The IDL help browser">&lt;/p>
 &lt;p>The documentation is divided into books aimed at users or developers and
 is fully searchable and cross indexed.&lt;/p>
 &lt;h1 id="manipulating_and_plotting_data">Manipulating And Plotting Data&lt;/h1>
@@ -5187,7 +5187,7 @@ example:&lt;/p>
 &lt;pre>&lt;code>IDL&amp;amp;gt; plot,[1,2,3],[2,2,5]
 &lt;/code>&lt;/pre>
 &lt;p>Gives rise to the following plot:&lt;/p>
-&lt;p>&lt;img src="/img/Idl_simple_plot.png" alt="A simple IDL plot">&lt;/p>
+&lt;p>&lt;img src="../Idl_simple_plot.png" alt="A simple IDL plot">&lt;/p>
 &lt;p>As a more concrete example, we will now take a one-dimensional slice
 through the 2D array &amp;ldquo;Number Density&amp;rdquo; read in from our SDF data file. In
 this example we will give the $x$ and $y$ axes labels by passing extra
@@ -5199,7 +5199,7 @@ IDL&amp;amp;gt; plot,data.x,data.number_density[*,256],xtitle='x', $
 IDL&amp;amp;gt; ytitle='number density'
 &lt;/code>&lt;/pre>
 &lt;p>This command generates the following plot:&lt;/p>
-&lt;p>&lt;img src="/img/Idl_plot.png" alt="A slice of a 2D array">&lt;/p>
+&lt;p>&lt;img src="../Idl_plot.png" alt="A slice of a 2D array">&lt;/p>
 &lt;h1 id="postscript_plots">Postscript Plots&lt;/h1>
 &lt;p>The plots shown so far have just been screen-shots of the interactive
 IDL plotting window. These are fairly low quality and could included as
@@ -5224,7 +5224,7 @@ IDL&amp;amp;gt; set_plot,'x'
 &lt;/code>&lt;/pre>
 &lt;p>This set of commands results in the following plot being written to a
 file named &amp;ldquo;out.ps&amp;rdquo;.&lt;/p>
-&lt;p>&lt;img src="/img/Idl_ps_plot.png" alt="A simple PS plot">&lt;/p>
+&lt;p>&lt;img src="../Idl_ps_plot.png" alt="A simple PS plot">&lt;/p>
 &lt;p>By default, IDL draws its own set of fonts called &amp;ldquo;Hershey vector
 fonts&amp;rdquo;. Much better looking results can be obtained by using a
 postscript font instead. These options are passed as parameters to the
@@ -5255,7 +5255,7 @@ IDL&amp;amp;gt; levels=levels,/fill,c_colors=colors
 &lt;p>Issuing these commands gives us the contour plot shown below. Note that
 the colour table used is not the default one but has been constructed to
 be similar to the one used by VisIt.&lt;/p>
-&lt;p>&lt;img src="/img/Idl_contour.png" alt="A simple contour plot">&lt;/p>
+&lt;p>&lt;img src="../Idl_contour.png" alt="A simple contour plot">&lt;/p>
 &lt;h1 id="shaded_surface_plots_in_idl">Shaded Surface Plots in IDL&lt;/h1>
 &lt;p>Another method for visualising 2D datasets is to produce a 3D plot in
 which the data is elevated in the $z$ direction by a height proportional
@@ -5269,7 +5269,7 @@ colour table which is&amp;quot;RED_TEMPERATURE&amp;quot;.&lt;/p>
 IDL&amp;amp;gt; shade_surf,data.number_density,data.x,data.y,xstyle=1, $
 IDL&amp;amp;gt; ystyle=1,xtitle='x',ytitle='y',ztitle='number density',charsize=3
 &lt;/code>&lt;/pre>
-&lt;p>&lt;img src="/img/Idl_shade_surf.png" alt="A shaded surface plot">&lt;/p>
+&lt;p>&lt;img src="../Idl_shade_surf.png" alt="A shaded surface plot">&lt;/p>
 &lt;h1 id="interactive_plotting">Interactive Plotting&lt;/h1>
 &lt;p>Finally, in recent versions of IDL (not GDL) it is now possible to
 perform all of these plot types in an interactive graphical user
@@ -5277,7 +5277,7 @@ interface. The corresponding procedures are launched with the commands
 &lt;strong>iplot&lt;/strong>, &lt;strong>icontour&lt;/strong> and &lt;strong>isurface&lt;/strong>.&lt;/p>
 &lt;pre>&lt;code>IDL&amp;amp;gt; iplot,data.x,data.number_density[*,256]
 &lt;/code>&lt;/pre>
-&lt;p>&lt;img src="/img/Idl_iplot.png" alt="Interactive plotting">&lt;/p>
+&lt;p>&lt;img src="../Idl_iplot.png" alt="Interactive plotting">&lt;/p>
 &lt;p>IDL is an extremely useful tool but it also comes with a fairly hefty
 price tag. If you are not part of an organisation that will buy it for
 you then you may wish to look into a free alternative. It is also a
@@ -5330,7 +5330,7 @@ datasets&lt;/li>
 &lt;p>Both the source code and pre-compiled binaries are available for
 download from the projects web page which is found at the URL
 &lt;a href="https://wci.llnl.gov/simulation/computer-codes/visit">https://wci.llnl.gov/simulation/computer-codes/visit&lt;/a>&lt;/p>
-&lt;p>&lt;img src="/img/Visit_web.png" alt="The LLNL VisIT website">&lt;/p>
+&lt;p>&lt;img src="../Visit_web.png" alt="The LLNL VisIT website">&lt;/p>
 &lt;p>There are full instructions for compiling the project from source code
 along with build scripts written to help ease the process. However, this
 is not recommended as it is an extremely large tool and the compilation
@@ -5393,7 +5393,7 @@ installed on the local machine. This is particularly useful when using a
 Windows environment to analyse data located on a remote UNIX
 workstation.&lt;/p>
 &lt;h1 id="loading_data_into_visit">Loading Data Into VisIt&lt;/h1>
-&lt;p>&lt;img src="/img/Visit_db_list.png" alt="The VisIt load databasedialog">&lt;/p>
+&lt;p>&lt;img src="../Visit_db_list.png" alt="The VisIt load databasedialog">&lt;/p>
 &lt;p>The most straightforward method for loading data into VisIt is to start
 the application and then browse the filesystem for the dataset you are
 interested in. This is done by selecting &amp;ldquo;File ⇒ Open file&amp;rdquo; from the
@@ -5415,7 +5415,7 @@ in a virtual database.&lt;/p>
 &lt;p>Yet another method for selecting the dataset to use is by opening a
 previously saved session file. We will discuss this further in a later
 section.&lt;/p>
-&lt;p>&lt;img src="/img/Visit_select_var.png" alt="The Visit select plot type and variabledropdown">&lt;/p>
+&lt;p>&lt;img src="../Visit_select_var.png" alt="The Visit select plot type and variabledropdown">&lt;/p>
 &lt;p>Once an SDF file has been successfully loaded the &amp;ldquo;Add&amp;rdquo; menu item will
 become un-greyed and the cycle numbers for each file in the virtual
 database will be displayed. If we navigate to one of the plot types we
@@ -5438,7 +5438,7 @@ select this item since it only generates a contour plot with lines
 indicating each contour level and not a filled version. Instead we
 choose &amp;ldquo;Add ⇒ Pseudocolor ⇒ Derived ⇒ Number Density&amp;rdquo; and then hit the
 &amp;ldquo;Draw&amp;rdquo; button.&lt;/p>
-&lt;p>&lt;img src="/img/Visit_contour.png" alt=" VisIT contour plotoutput">&lt;/p>
+&lt;p>&lt;img src="../Visit_contour.png" alt=" VisIT contour plotoutput">&lt;/p>
 &lt;p>There are many settings which can alter the visual appearance of plots
 generated by VisIt. The first point of call is usually to open up the
 &amp;ldquo;Plot Attributes&amp;rdquo; or &amp;ldquo;Operator Attributes&amp;rdquo; dialogue corresponding to the
@@ -5450,12 +5450,12 @@ arrow on the left hand side of the plot in the main VisIt menu pane.
 This will drop down to reveal a list containing the plot and all
 operators acting on it. Double-clicking on an operator will launch the
 corresponding &amp;ldquo;Operator Attributes&amp;rdquo; dialogue.&lt;/p>
-&lt;p>&lt;img src="/img/Visit_attrib.png" alt="image">&lt;/p>
+&lt;p>&lt;img src="../Visit_attrib.png" alt="image">&lt;/p>
 &lt;p>Another important tool for controlling the appearance of plots can be
 found in &amp;ldquo;Controls ⇒ Annotation&amp;rdquo; from the VisIt menu bar. This allows
 all of the plot annotations to be modified such as the legend, title,
 axis labels, etc.&lt;/p>
-&lt;p>&lt;img src="/img/Visit_annot.png" alt="The VisIT annotationsdialog">&lt;/p>
+&lt;p>&lt;img src="../Visit_annot.png" alt="The VisIT annotationsdialog">&lt;/p>
 &lt;h1 id="d_plotting_in_visit">1D Plotting in VisIt&lt;/h1>
 &lt;p>A 1D plot in VisIt is called a &amp;ldquo;Curve&amp;rdquo; plot. We already mentioned that
 this was greyed out because we have no one dimensional variables in our
@@ -5464,11 +5464,11 @@ data file.&lt;/p>
 one dimensional array from a 2D or 3D variable. This operator is
 selected by pressing the button with red and blue lines located at the
 top of the plot window.&lt;/p>
-&lt;p>&lt;img src="/img/Visit_lineout.png" alt="image">&lt;/p>
+&lt;p>&lt;img src="../Visit_lineout.png" alt="image">&lt;/p>
 &lt;p>Once the button has been pressed, we can click and drag anywhere in the
 &amp;ldquo;Pseudocolor&amp;rdquo; plot window. When we release the mouse button a new plot
 window pops up containing a &amp;ldquo;Curve&amp;rdquo; plot of the data just selected.&lt;/p>
-&lt;p>&lt;img src="/img/Visit_curve.png" alt="VisIt curve plot example">&lt;/p>
+&lt;p>&lt;img src="../Visit_curve.png" alt="VisIt curve plot example">&lt;/p>
 &lt;p>In order to change the attributes for this plot, we must first select
 Active window&amp;quot; number 2 in the main VisIt pane.&lt;/p>
 &lt;h1 id="shaded_surface_plots_in_visit">Shaded Surface Plots in VisIt&lt;/h1>
@@ -5481,7 +5481,7 @@ did before. Next select the &amp;ldquo;Operator Attributes ⇒ Transforms ⇒ El
 menu item. In the pop up dialogue click on the &amp;ldquo;Elevation height
 relative to XY limits?&amp;rdquo; and then &amp;ldquo;Apply&amp;rdquo;. Click &amp;ldquo;Yes&amp;rdquo; when the warning
 dialogue pops up.&lt;/p>
-&lt;p>&lt;img src="/img/Visit_shade_surf.png" alt="VisIt shaded surfaceplots">&lt;/p>
+&lt;p>&lt;img src="../Visit_shade_surf.png" alt="VisIt shaded surfaceplots">&lt;/p>
 &lt;p>To make this plot look similar to the one generated by IDL, we have
 changed the colour table using &amp;ldquo;Controls ⇒ Color table&amp;rdquo;. We also changed
 the axis appearance with the annotations menu discussed earlier and
@@ -5496,7 +5496,7 @@ this variable behaves in exactly the same way as any of the variables
 read from the data file.&lt;/p>
 &lt;p>As an example, we can combine the three components of electric field to
 generate a single electric field vector.&lt;/p>
-&lt;p>&lt;img src="/img/Visit_expression_vector.png" alt=" VisIT expression dialog showing an example vectorexpression">&lt;/p>
+&lt;p>&lt;img src="../Visit_expression_vector.png" alt=" VisIT expression dialog showing an example vectorexpression">&lt;/p>
 &lt;p>Now when we return to the &amp;ldquo;Add&amp;rdquo; menu we see that the &amp;ldquo;Vector&amp;rdquo; and
 &amp;ldquo;Streamline&amp;rdquo; and plot types now have an entry for our newly defined
 vector.&lt;/p>
@@ -5526,7 +5526,7 @@ format such as &amp;ldquo;PNG&amp;rdquo; to save to rather than &amp;ldquo;MPEG&
 generate one image per frame and number them consecutively. At the end
 of the process the images can be converted into a movie using whatever
 tool best accomplishes the task.&lt;/p>
-&lt;p>&lt;img src="/img/Visit_movie.png" alt="VisIt create moviedialog">&lt;/p>
+&lt;p>&lt;img src="../Visit_movie.png" alt="VisIt create moviedialog">&lt;/p>
 &lt;p>Another useful tip is to select the &amp;ldquo;Later, tell me the command to run&amp;rdquo;
 radio button. This will output a long command which can run from a UNIX
 terminal screen. The advantage is that no X session is required so the
@@ -5569,7 +5569,7 @@ list of pre-defined host profiles. These are unnecessary for anyone not
 affiliated and can safely be removed by deleting the directory
 &lt;code>$HOME/visit/current/.visit&lt;/code> (assuming you have unpacked the VisIt
 tarball into your home directory).&lt;/p>
-&lt;p>&lt;img src="/img/Visit_host_profile.png" alt="VisIT remote host configurationdialog">&lt;/p>
+&lt;p>&lt;img src="../Visit_host_profile.png" alt="VisIT remote host configurationdialog">&lt;/p>
 &lt;p>Create a new profile by clicking on the &amp;ldquo;New Host&amp;rdquo; button and filling
 out some of the form fields. The important ones to change are &amp;ldquo;Host
 nickname&amp;rdquo;, &amp;ldquo;Remote host name&amp;rdquo;, &amp;ldquo;Host name aliases&amp;rdquo; and &amp;ldquo;Username&amp;rdquo;. If
@@ -5586,7 +5586,7 @@ selection procedure but now displaying files located on the remote
 machine rather than the local one. From this point on everything should
 work as before except you should see the name of the remote machine in
 the &amp;ldquo;Selected files&amp;rdquo; dialogue.&lt;/p>
-&lt;p>&lt;img src="/img/Visit_host_files.png" alt=" VisIT load file dialog showing files on remotehost">&lt;/p>
+&lt;p>&lt;img src="../Visit_host_files.png" alt=" VisIT load file dialog showing files on remotehost">&lt;/p>
 &lt;h1 id="parallel_visualisation">Parallel Visualisation&lt;/h1>
 &lt;p>Parallel visualisation is performed in almost exactly the same manner as
 remote visualisation. Again, you must create a host profile for the
@@ -5719,7 +5719,7 @@ system. The code &lt;code>plt.ion()&lt;/code> sets matplotlib to interactive mod
 control will be returned to you as soon as the plot has finished
 drawing.&lt;/p>
 &lt;p>
-&lt;a href="/img/Matplotlib1D_screenshot.png">Example 1D plot generated by sdf_helper.plot_auto&lt;/a>&lt;/p>
+&lt;a href="../Matplotlib1D_screenshot.png">Example 1D plot generated by sdf_helper.plot_auto&lt;/a>&lt;/p>
 &lt;p>Plotting a 2D function is the same basic idea, and the code&lt;/p>
 &lt;pre>&lt;code class="language-python">import sdf_helper as sh
 import matplotlib.pyplot as plt
@@ -5727,7 +5727,7 @@ plt.ion()
 data=sh.getdata('Data/0010.sdf')
 sh.plot_auto(data.dist_fn_x_px_Right, iso=0)
 &lt;/code>&lt;/pre>
-&lt;p>&lt;img src="/img/Matplotlib2D.png" alt=" thumb \| 200px \| Example 2D plot generated bysdf_helper.plot_auto">&lt;/p>
+&lt;p>&lt;img src="../Matplotlib2D.png" alt=" thumb \| 200px \| Example 2D plot generated bysdf_helper.plot_auto">&lt;/p>
 &lt;p>will produce the figure on the right. The procedure for variables from
 EPOCH2D data is exactly the same.&lt;/p>
 &lt;h3 id="changing_colour_tables">Changing colour tables&lt;/h3>
@@ -5875,14 +5875,14 @@ number_density = always + species
 temperature = always + species
 end:output
 &lt;/code>&lt;/pre>
-&lt;p>&lt;img src="/img/Two_Stream_Late.png" alt="The final state of the electron phase space for the two streaminstabilityexample">
+&lt;p>&lt;img src="../Two_Stream_Late.png" alt="The final state of the electron phase space for the two streaminstabilityexample">
 In this example, the constant block sets up constants for the momentum
 space drift, the temperature and the electron number density. The two
 species blocks set up the two drifting Maxwellian distributions and the
 constant density profile. The final output from this simulation is shown
 in the figure.&lt;/p>
 &lt;h1 id="structured_density_profile_in_epoch2d">Structured density profile in EPOCH2D&lt;/h1>
-&lt;p>&lt;img src="/img/EPOCH_density_example.png" alt="Complex 2D densitystructure">&lt;/p>
+&lt;p>&lt;img src="../EPOCH_density_example.png" alt="Complex 2D densitystructure">&lt;/p>
 &lt;p>A simple but useful example for EPOCH2D is to have a highly structured
 initial condition to show that this is still easy to implement in EPOCH.
 A good example initial condition would be:&lt;/p>
@@ -5985,9 +5985,9 @@ npart = nx * ny * nz
 end:species
 &lt;/code>&lt;/pre>
 &lt;h4 id="3d_cone">Cone initial conditions in 3D&lt;/h4>
-&lt;p>&lt;img src="/img/3dcone.png" alt="Cone initial conditions in 3D">&lt;/p>
+&lt;p>&lt;img src="../3dcone.png" alt="Cone initial conditions in 3D">&lt;/p>
 &lt;h4 id="2d_cone">Cone initial conditions in 2D&lt;/h4>
-&lt;p>&lt;img src="/img/2dcone.png" alt="Cone initial conditions in 2D">&lt;/p>
+&lt;p>&lt;img src="../2dcone.png" alt="Cone initial conditions in 2D">&lt;/p>
 &lt;p>To convert this to 2D, simply replace the line &lt;code>r = sqrt(y^2+z^2)&lt;/code> with
 the line &lt;code>r = abs(y)&lt;/code>. The actual work in these initial conditions is
 done by the three lines inside the block for the &lt;strong>Proton&lt;/strong> species.
@@ -6065,7 +6065,7 @@ ey = always
 bz = always
 end:output
 &lt;/code>&lt;/pre>
-&lt;p>&lt;img src="/img/FocussedBeam.png" alt="The focussed beam">&lt;/p>
+&lt;p>&lt;img src="../FocussedBeam.png" alt="The focussed beam">&lt;/p>
 &lt;p>The deck is based on the laser test deck supplied with Epoch, with a
 modified laser and longer runtime. Other classes of beam (Bessel etc)
 can be created similarly.&lt;/p></description></item><item><title>Workshop examples</title><link>/documentation/examples/workshop_examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/examples/workshop_examples/</guid><description>&lt;h1 id="epoch_workshop_overview">EPOCH workshop overview&lt;/h1>
@@ -6165,7 +6165,7 @@ directory. To work through the examples, you must download an input deck
 from the section below to the directory you want EPOCH to use and rename
 the file &amp;ldquo;input.deck&amp;rdquo;. Throughout this guide we will assume that you use
 the directory named &amp;ldquo;Data&amp;rdquo;.&lt;/p>
-&lt;p>&lt;img src="/img/EPOCH_Splash.png" alt="The EPOCH1D splash page">&lt;/p>
+&lt;p>&lt;img src="../EPOCH_Splash.png" alt="The EPOCH1D splash page">&lt;/p>
 &lt;h3 id="getting_the_example_decks_for_this_workshop">Getting the example decks for this workshop&lt;/h3>
 &lt;p>The example input decks used in this workshop can be downloaded using
 the following links. Create a directory &amp;ldquo;~/EXAMPLES&amp;rdquo; to put them in:&lt;/p>
@@ -6317,7 +6317,7 @@ that the function would normally be a sine wave, but this has been
 shifted by pi/2 because the &amp;ldquo;phase&amp;rdquo; parameter was used. The blue line
 shows the laser amplitude generated when the &amp;ldquo;t_profile&amp;rdquo; gaussian
 profile is applied.&lt;/p>
-&lt;p>&lt;img src="/img/WorkshopLaser.png" alt="The laser profile">&lt;/p>
+&lt;p>&lt;img src="../WorkshopLaser.png" alt="The laser profile">&lt;/p>
 &lt;h3 id="the_output_block">The Output Block&lt;/h3>
 &lt;p>The final addition is the &amp;ldquo;output&amp;rdquo; block. We will cover this in more
 detail later. For now, it is sufficient to know that this is the block
@@ -6393,7 +6393,7 @@ NPTS LONG Array[1]
 &lt;p>This is the node-centred grid along with its metadata. The cell-centred
 array shown previously is derived from this. Finally, the HEADER entry
 contains metadata about the code and runtime information.&lt;/p>
-&lt;p>&lt;img src="/img/WorkshopLaserGDL.png" alt="An example GDLplot">&lt;/p>
+&lt;p>&lt;img src="../WorkshopLaserGDL.png" alt="An example GDLplot">&lt;/p>
 &lt;p>The above plot can be generated by issuing the following command:
 &lt;code>plot,data.x,data.ey.data&lt;/code> There are more examples on using idl/gdl in
 the
@@ -6445,7 +6445,7 @@ xc(200,) = grid_mid
 axis labels. To use this type:&lt;/p>
 &lt;pre>&lt;code class="language-python">plot_auto(data.Electric_Field_Ey)
 &lt;/code>&lt;/pre>
-&lt;p>&lt;img src="/img/WorkshopLaserPython.png" alt="An example Pythonplot">&lt;/p>
+&lt;p>&lt;img src="../WorkshopLaserPython.png" alt="An example Pythonplot">&lt;/p>
 &lt;h3 id="loading_the_data_into_visit">Loading the data into VisIt&lt;/h3>
 &lt;p>EPOCH comes with an SDF reader plugin for the VisIt parallel
 visualization tool. In order to use it, you must first compile the
@@ -6461,7 +6461,7 @@ VisIt and open the specified data file on startup. Alternatively, you
 can browse for the file to open using the &amp;ldquo;Open&amp;rdquo; button. All the SDF
 files in a directory will be grouped together with a green &amp;ldquo;DB&amp;rdquo; icon and
 the name &amp;ldquo;*.sdf database&amp;rdquo;.&lt;/p>
-&lt;p>&lt;img src="/img/WorkshopLaserVisit.png" alt="An example VisItplot">&lt;/p>
+&lt;p>&lt;img src="../WorkshopLaserVisit.png" alt="An example VisItplot">&lt;/p>
 &lt;p>You can then plot a quantity by pressing the &amp;ldquo;Add&amp;rdquo; button, selecting the
 type of plot and the variable to use for the plot. When the plot has
 been selected, press the &amp;ldquo;Draw&amp;rdquo; button to render it to screen. The plot
@@ -6573,7 +6573,7 @@ they have been assigned.&lt;/p>
 lower and upper boundaries in the y-direction, &amp;ldquo;bc_y_min&amp;rdquo;,
 &amp;ldquo;bc_y_max&amp;rdquo;. These have both been set to &amp;ldquo;periodic&amp;rdquo; so that the field
 at the top of the domain wraps around to the bottom of the domain.&lt;/p>
-&lt;p>&lt;img src="/img/Workshop2DLaserVisIt.png" alt="2D laser plot withVisIt">&lt;/p>
+&lt;p>&lt;img src="../Workshop2DLaserVisIt.png" alt="2D laser plot withVisIt">&lt;/p>
 &lt;p>Next, we introduce a new block type, &amp;ldquo;constant&amp;rdquo;. This block defines
 named variables which can be arbitrary mathematical expressions. Once
 defined, these can be used on the left-hand side of name-value pairs in
@@ -6591,7 +6591,7 @@ all points along the boundary. When the laser is attached to &amp;ldquo;y_min&am
 &lt;p>Finally, the output block has been modified so that it outputs all
 electromagnetic field components.&lt;/p>
 &lt;p>The result of plotting &amp;ldquo;Add-&amp;gt;Pseudocolor-&amp;gt;Electric Field-&amp;gt;Ey&amp;rdquo; in
-VisIt is shown above. &lt;img src="/img/Workshop2DLaserMatplot.png" alt="2D laser plot withMatplotlib">&lt;/p>
+VisIt is shown above. &lt;img src="../Workshop2DLaserMatplot.png" alt="2D laser plot withMatplotlib">&lt;/p>
 &lt;p>The laser block also contains a commented-out &amp;ldquo;phase&amp;rdquo; entry. Unlike in
 the 1D version seen previously, this is a function of Y, like the
 &amp;ldquo;profile&amp;rdquo; parameter. Uncommenting this line and re-running the deck will
@@ -6692,8 +6692,8 @@ domain and is used to give the particles an average momentum drift in
 the x-direction. There are similar &amp;ldquo;drift_y&amp;rdquo; and &amp;ldquo;drift_z&amp;rdquo; parameters.&lt;/p>
 &lt;p>This deck has been designed to simulate a two-stream instability, so it
 has two groups of particles which are identical in every respect except
-that one set is drifting in the opposite direction to the other. &lt;img src="/img/WorkshopTwoStreamPython.png" alt="Thetwo-stream instability inMatplotlib">
-&lt;img src="/img/WorkshopTwoStreamGDL.png" alt="The two-stream instability in GDL">&lt;/p>
+that one set is drifting in the opposite direction to the other. &lt;img src="../WorkshopTwoStreamPython.png" alt="Thetwo-stream instability inMatplotlib">
+&lt;img src="../WorkshopTwoStreamGDL.png" alt="The two-stream instability in GDL">&lt;/p>
 &lt;p>In the output block we have added a couple of parameters for outputting
 particle data. The first parameter, &amp;ldquo;particles&amp;rdquo;, outputs the grid on
 which the particles are defined. There are two different types of
