@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Code details | EPOCH</title><link>/documentation/code_details/</link><atom:link href="/documentation/code_details/index.xml" rel="self" type="application/rss+xml"/><description>Code details</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><image><url>/images/logo_hub4b4d6a0f57638acebb5550a80c8c030_9243_300x300_fit_lanczos_2.png</url><title>Code details</title><link>/documentation/code_details/</link></image><item><title>Maths parser</title><link>/documentation/code_details/maths_parser/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/code_details/maths_parser/</guid><description>&lt;p>A discussion of the input deck for EPOCH would not be complete without
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Code details | EPOCH</title><link>/documentation/code_details.html</link><atom:link href="/documentation/code_details/index.xml" rel="self" type="application/rss+xml"/><description>Code details</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><image><url>/images/logo_hub4b4d6a0f57638acebb5550a80c8c030_9243_300x300_fit_lanczos_2.png</url><title>Code details</title><link>/documentation/code_details.html</link></image><item><title>Maths parser</title><link>/documentation/code_details/maths_parser.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/code_details/maths_parser.html</guid><description>&lt;p>A discussion of the input deck for EPOCH would not be complete without
 consideration of the maths parser. The maths parser is the code which
 reads the input decks. The parser makes it possible that any parameter
 taking a numerical value (integer or real) can be input as a
@@ -62,13 +62,11 @@ in this subsection. An example of using a constant would be:
 &lt;li>asin(a) - Arcsine.&lt;/li>
 &lt;li>acos(a) - Arccosine.&lt;/li>
 &lt;li>atan(a) - Arctangent.&lt;/li>
-&lt;/ul>
-&lt;p>- Arctangent using the Fortran ATAN2 function. This computes the
+&lt;li>atan2(Y,X) - Arctangent using the Fortran ATAN2 function. This computes the
 principal value of the argument function of the complex number
 $X + i Y$. This function can be used to transform from Cartesian into
 polar coordinates and allows to determine the angle in the correct
-quadrant.&lt;/p>
-&lt;ul>
+quadrant.&lt;/li>
 &lt;li>sinh(a) - Hyperbolic sine.&lt;/li>
 &lt;li>cosh(a) - Hyperbolic cosine.&lt;/li>
 &lt;li>tanh(a) - Hyperbolic tangent.&lt;/li>
@@ -154,7 +152,7 @@ precedence is important. It is not possible at this time to specify
 custom operators without major changes to the code. An example of using
 an operator would be:&lt;/p>
 &lt;pre>&lt;code class="language-perl"> length_x = 10.0 + 12.0
-&lt;/code>&lt;/pre></description></item><item><title>Using EPOCH in practice</title><link>/documentation/code_details/using_epoch_in_practice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/code_details/using_epoch_in_practice/</guid><description>&lt;h1 id="specifying_initial_conditions_for_particles_using_the_input_deck">Specifying initial conditions for particles using the input deck&lt;/h1>
+&lt;/code>&lt;/pre></description></item><item><title>Using EPOCH in practice</title><link>/documentation/code_details/using_epoch_in_practice.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/code_details/using_epoch_in_practice.html</guid><description>&lt;h1 id="specifying_initial_conditions_for_particles_using_the_input_deck">Specifying initial conditions for particles using the input deck&lt;/h1>
 &lt;p>If the initial conditions for the plasma you wish to model can be
 described by a number density and temperature profile on the underlying
 grid then EPOCH can create an appropriate particle distribution for you.
@@ -582,8 +580,8 @@ have a profile in y and z. Since 3D lasers are very similar to 2D
 lasers, they will not be considered here in greater detail, but in 3D,
 it is possible to freely specify the laser profile across the entire
 face where a laser is attached.
-&lt;img src="../Profile_flat.png" alt="Uniform laser profile inEPOCH2D">
-&lt;img src="../Profile_gauss.png" alt="Gaussian laser profile inEPOCH2D">&lt;/p>
+&lt;img src="Profile_flat.png" alt="Uniform laser profile inEPOCH2D">
+&lt;img src="Profile_gauss.png" alt="Gaussian laser profile inEPOCH2D">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;code>phase&lt;/code> - Phase shift for the laser in radians. This is a
@@ -611,8 +609,8 @@ there will be artefacts on the scale of the grid for lasers driven
 at an angle.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="../Profile_angle.png" alt="Laser propagating at an angle inEPOCH2D">
-&lt;img src="../Wave_angle.png" alt="Schematic diagram of a laser propagating at an angle in2D">&lt;/p>
+&lt;p>&lt;img src="Profile_angle.png" alt="Laser propagating at an angle inEPOCH2D">
+&lt;img src="Wave_angle.png" alt="Schematic diagram of a laser propagating at an angle in2D">&lt;/p>
 &lt;p>Using this technique it is also possible to focus a laser. This is done
 by using the same technique as above but making the angle of
 propagation, $\theta$, a function of $y$ such that the laser is focused
@@ -785,7 +783,7 @@ end:species
 &lt;/code>&lt;/pre>
 &lt;p>This changes the code to run with a Gaussian density profile rather then
 a step function. Again, this can be extended as far as required.&lt;/p>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title>Using delta f</title><link>/documentation/code_details/using_delta_f/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/code_details/using_delta_f/</guid><description>&lt;p>To help reduce the impact of numerical noise in certain simulations, the
+&lt;!-- ######################## Cross references ######################## --></description></item><item><title>Using delta f</title><link>/documentation/code_details/using_delta_f.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/code_details/using_delta_f.html</guid><description>&lt;p>To help reduce the impact of numerical noise in certain simulations, the
 delta-f method may be used in for specified particle species. The
 delta-f method effectively subtracts a background distribution $f_0$
 when calculating currents due to the motion of markers; when the
@@ -842,7 +840,7 @@ of the electric field diagnostics between standard and delta-f
 simulations shows a substantial decrease in noise.&lt;/p>
 &lt;p>Further details of the method are provided
 &lt;a href="Media:talk_deltaf.pdf" title="wikilink"> in this
-pdf&lt;/a>.&lt;/p></description></item><item><title>Previous versions</title><link>/documentation/code_details/previous_versions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/code_details/previous_versions/</guid><description>&lt;h1 id="changes_between_version_3" class="1_and_4 0">Changes between version 3.1 and 4.0&lt;/h1>
+pdf&lt;/a>.&lt;/p></description></item><item><title>Previous versions</title><link>/documentation/code_details/previous_versions.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/code_details/previous_versions.html</guid><description>&lt;h1 id="changes_between_version_3" class="1_and_4 0">Changes between version 3.1 and 4.0&lt;/h1>
 &lt;h1 id="changes_to_the_makefile">Changes to the Makefile&lt;/h1>
 &lt;p>Some changes have been made to the Makefile. These are documented
 &lt;a href="/documentation/basic_usage/compiler_flags">here&lt;/a>.

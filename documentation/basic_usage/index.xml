@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Basic usage | EPOCH</title><link>/documentation/basic_usage/</link><atom:link href="/documentation/basic_usage/index.xml" rel="self" type="application/rss+xml"/><description>Basic usage</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><image><url>/images/logo_hub4b4d6a0f57638acebb5550a80c8c030_9243_300x300_fit_lanczos_2.png</url><title>Basic usage</title><link>/documentation/basic_usage/</link></image><item><title>FAQs</title><link>/documentation/basic_usage/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/basic_usage/faq/</guid><description>&lt;h2 id="is-this-manual-up-to-date">Is this manual up to date?&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Basic usage | EPOCH</title><link>/documentation/basic_usage.html</link><atom:link href="/documentation/basic_usage/index.xml" rel="self" type="application/rss+xml"/><description>Basic usage</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><image><url>/images/logo_hub4b4d6a0f57638acebb5550a80c8c030_9243_300x300_fit_lanczos_2.png</url><title>Basic usage</title><link>/documentation/basic_usage.html</link></image><item><title>FAQs</title><link>/documentation/basic_usage/faq.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/basic_usage/faq.html</guid><description>&lt;h2 id="is-this-manual-up-to-date">Is this manual up to date?&lt;/h2>
 &lt;p>Whenever a new milestone version of &lt;strong>EPOCH&lt;/strong> is finalised, the version
 number is changed and this manual is updated accordingly. The version
 number of the manual should match the first two digits for that of the
@@ -140,7 +140,7 @@ commented.&lt;/p>
 &lt;h2 id="how-do-i-acknowledge-use-of-the-code">How do I acknowledge use of the code?&lt;/h2>
 &lt;p>See
 &lt;a href="/documentation/basic_usage/acknowledging_epoch">here&lt;/a>.&lt;/p>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title>Code structure</title><link>/documentation/basic_usage/structure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/basic_usage/structure/</guid><description>&lt;p>When obtained, the EPOCH codes all have a similar structure. If the
+&lt;!-- ######################## Cross references ######################## --></description></item><item><title>Code structure</title><link>/documentation/basic_usage/structure.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/basic_usage/structure.html</guid><description>&lt;p>When obtained, the EPOCH codes all have a similar structure. If the
 tarred and gzipped archive (commonly referred to as a tarball) is
 downloaded and unpacked into the user&amp;rsquo;s &lt;code>$HOME&lt;/code> directory, then the
 extracted contents will consist of a directory named
@@ -193,7 +193,7 @@ contain a copy of the input decks and source code used to generate
 them. This script can be used to unpack that information from a
 given restart dump. It is run from the command line and must be
 passed the name of the restart dump file.&lt;/li>
-&lt;/ul></description></item><item><title>Compiling EPOCH</title><link>/documentation/basic_usage/compiling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/basic_usage/compiling/</guid><description>&lt;p>To compile EPOCH in the supplied state, you must first change to the
+&lt;/ul></description></item><item><title>Compiling EPOCH</title><link>/documentation/basic_usage/compiling.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/basic_usage/compiling.html</guid><description>&lt;p>To compile EPOCH in the supplied state, you must first change to the
 correct working directory. As explained in , the root directory for
 EPOCH contains several subdirectories, including separate directories
 for each of the 1D, 2D and 3D versions of the code. To compile the 2D
@@ -264,7 +264,7 @@ the correct value for &lt;code>COMPILER&lt;/code> if it is already known.&lt;/p>
 &amp;ldquo;&lt;code>MODE=debug&lt;/code>&amp;rdquo; and can compile using more than one processor by using
 &amp;ldquo;&lt;code>-j&amp;lt;n&amp;gt;&lt;/code>&amp;rdquo;, where &amp;ldquo;&lt;code>&amp;lt;n&amp;gt;&lt;/code>&amp;rdquo; is the number of processors to use. Note that
 this is just to speed up the compilation process; the resulting binary
-can be run on any number of processors.&lt;/p></description></item><item><title>Compiler flags and preprocessor defines</title><link>/documentation/basic_usage/compiler_flags/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/basic_usage/compiler_flags/</guid><description>&lt;p>As already stated, some features of the code are controlled by compiler
+can be run on any number of processors.&lt;/p></description></item><item><title>Compiler flags and preprocessor defines</title><link>/documentation/basic_usage/compiler_flags.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/basic_usage/compiler_flags.html</guid><description>&lt;p>As already stated, some features of the code are controlled by compiler
 preprocessor directives. The flags for these preprocessor directives are
 specified in &amp;ldquo;Makefile&amp;rdquo; and are placed on lines which look like the
 following:&lt;/p>
@@ -460,7 +460,7 @@ below all the DEFINE flags there is the following line:&lt;/p>
 &lt;/code>&lt;/pre>
 &lt;p>Just uncomment this line and source code in restart dumps will be
 permanently disabled.&lt;/p>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title>Running EPOCH and basic control of EPOCH</title><link>/documentation/basic_usage/running/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/basic_usage/running/</guid><description>&lt;p>When the code is run, the output is&lt;/p>
+&lt;!-- ######################## Cross references ######################## --></description></item><item><title>Running EPOCH and basic control of EPOCH</title><link>/documentation/basic_usage/running.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/basic_usage/running.html</guid><description>&lt;p>When the code is run, the output is&lt;/p>
 &lt;pre>&lt;code> d########P d########b .######b d####### d##P d##P
 d########P d########### d########### .########## d##P d##P
 ---- ---- ---- ----- ---- ----- ---- -- P
@@ -483,7 +483,7 @@ example input decks which include all the necessary sections for the
 code to run. Alternately, the code checks for the Data directory in a
 file named &amp;ldquo;USE_DATA_DIRECTORY&amp;rdquo; before prompting at the command-line.
 This allows the code to be run without waiting for input at the
-command-line.&lt;/p></description></item><item><title>Acknowledging EPOCH</title><link>/documentation/basic_usage/acknowledging_epoch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/basic_usage/acknowledging_epoch/</guid><description>&lt;h2 id="how-do-i-acknowledge-use-of-the-code">How do I acknowledge use of the code?&lt;/h2>
+command-line.&lt;/p></description></item><item><title>Acknowledging EPOCH</title><link>/documentation/basic_usage/acknowledging_epoch.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/basic_usage/acknowledging_epoch.html</guid><description>&lt;h2 id="how-do-i-acknowledge-use-of-the-code">How do I acknowledge use of the code?&lt;/h2>
 &lt;p>There is a paper&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> which details many aspects of the &lt;strong>EPOCH&lt;/strong>
 implementation and also includes useful information on current PIC
 codes. This paper is OpenAccess so freely available to all. If using
@@ -517,7 +517,7 @@ modelling,&amp;rdquo; Plasma Physics and Controlled Fusion, 2015.
 &lt;a href="http://iopscience.iop.org/article/10.1088/0741-3335/57/11/113001/pdf" target="_blank" rel="noopener">link&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/section></description></item><item><title>Library requirements for the EPOCH codes</title><link>/documentation/basic_usage/libraries/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/basic_usage/libraries/</guid><description>&lt;p>The EPOCH codes are written using MPI for parallelism, but have no other
+&lt;/section></description></item><item><title>Library requirements for the EPOCH codes</title><link>/documentation/basic_usage/libraries.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/basic_usage/libraries.html</guid><description>&lt;p>The EPOCH codes are written using MPI for parallelism, but have no other
 libraries or dependencies. Currently, the codes are written to only
 require MPI1.2 compatible libraries, although this may change to require
 full MPI2 compliance in the future. Current versions of both MPICH and

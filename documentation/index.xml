@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Overview | EPOCH</title><link>/documentation/</link><atom:link href="/documentation/index.xml" rel="self" type="application/rss+xml"/><description>Overview</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate><image><url>/images/logo_hub4b4d6a0f57638acebb5550a80c8c030_9243_300x300_fit_lanczos_2.png</url><title>Overview</title><link>/documentation/</link></image><item><title>The EPOCH input deck</title><link>/documentation/input_deck/input_deck/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck/</guid><description>&lt;p>Most of the control of EPOCH is through a text file called &lt;code>input.deck&lt;/code>.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Overview | EPOCH</title><link>/documentation.html</link><atom:link href="/documentation/index.xml" rel="self" type="application/rss+xml"/><description>Overview</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate><image><url>/images/logo_hub4b4d6a0f57638acebb5550a80c8c030_9243_300x300_fit_lanczos_2.png</url><title>Overview</title><link>/documentation.html</link></image><item><title>The EPOCH input deck</title><link>/documentation/input_deck/input_deck.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck.html</guid><description>&lt;p>Most of the control of EPOCH is through a text file called &lt;code>input.deck&lt;/code>.
 The input deck file must be in the output directory which is passed to
 the code at runtime and contains all the basic information which is
 needed to set up the code, including the size and subdivision of the
@@ -82,7 +82,7 @@ expressions. These are designed to simplify the initial condition
 setup. See
 &lt;a href="/documentation/input_deck/input_deck_constant">here&lt;/a>.&lt;/li>
 &lt;/ul>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title>control block</title><link>/documentation/input_deck/input_deck_control/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_control/</guid><description>&lt;p>The &lt;em>control&lt;/em> block contains information about the general code setup.
+&lt;!-- ######################## Cross references ######################## --></description></item><item><title>control block</title><link>/documentation/input_deck/input_deck_control.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_control.html</guid><description>&lt;p>The &lt;em>control&lt;/em> block contains information about the general code setup.
 See
 &lt;a href="/documentation/input_deck/input_deck">EPOCH input deck&lt;/a> for more information
 on the input deck.&lt;/p>
@@ -192,7 +192,7 @@ for solving Maxwell&amp;rsquo;s equations. Can be 2, 4 or 6. If not specified, t
 default is to use a second order scheme.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Choose a Maxwell solver scheme with an extended stencil. This option
+&lt;p>&lt;code>maxwell_solver&lt;/code> - Choose a Maxwell solver scheme with an extended stencil. This option
 is only active if field_order is set to 2. Possible options are &amp;ldquo;yee&amp;rdquo;,
 &amp;ldquo;lehe_{x,y,z}&amp;rdquo;, &amp;ldquo;pukhov&amp;rdquo;, &amp;ldquo;cowan&amp;rdquo; and since v4.12 &amp;ldquo;custom&amp;rdquo;. Note that
 not all options are available in 1d and 2d. The default is &amp;ldquo;yee&amp;rdquo; which
@@ -482,11 +482,11 @@ focusses on improving the dispersion relation on the $x$-axis, please
 take this into account when defining your laser input. It is available
 in EPOCH1D, EPOCH2D and EPOCH3D. While it is not technically required to
 use a dt_multiplier smaller than unity, the value proposed by Lehe et
-al &lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup> is &amp;ldquo;dt_multiplier=0.96&amp;rdquo;.&lt;/p>
+al &lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup> is &amp;ldquo;dt_multiplier=0.96&amp;rdquo;.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;code>maxwell_solver = pukhov&lt;/code> - This setting will enable an
-extended stencil proposed by Pukhov &lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup> under the name of NDFX. It
+extended stencil proposed by Pukhov &lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup> under the name of NDFX. It
 is available in EPOCH2D and EPOCH3D. In EPOCH1D, setting
 maxwell_solver = pukhov will make the code fall back silently to
 Yee&amp;rsquo;s scheme. Pukhov&amp;rsquo;s NDFX scheme aims at improving the numerical
@@ -499,10 +499,10 @@ relation is best along the axis with the smallest grid spacing.&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;code>maxwell_solver = cowan&lt;/code> - This setting will enable en
-extended stencil proposed by Cowan et al &lt;sup id="fnref:5">&lt;a href="#fn:5" class="footnote-ref" role="doc-noteref">5&lt;/a>&lt;/sup>. It is available only
+extended stencil proposed by Cowan et al &lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup>. It is available only
 in EPOCH3D. In EPOCH1D and EPOCH2D, setting maxwell_solver = cowan
 will make the code fall back silently to Yee&amp;rsquo;s scheme. Cowan et al
-&lt;sup id="fnref:6">&lt;a href="#fn:6" class="footnote-ref" role="doc-noteref">6&lt;/a>&lt;/sup> proposes to numerically calculate a time step that has the
+&lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup> proposes to numerically calculate a time step that has the
 correct group velocity for the input laser. Typically these time
 steps are only slightly below the CFL condition, e.g. &amp;quot; = 0.999&amp;quot;.
 When Cowan&amp;rsquo;s scheme is reduced to 2D it is the same as Pukhov&amp;rsquo;s
@@ -512,7 +512,7 @@ is best along the axis with the smallest grid spacing.&lt;/p>
 &lt;li>
 &lt;p>&lt;code>maxwell_solver = custom&lt;/code> - This setting will enable full user control
 over the extended stencil coefficients. This allows for the specification
-of optimised coefficients as outlined in &lt;sup id="fnref:7">&lt;a href="#fn:7" class="footnote-ref" role="doc-noteref">7&lt;/a>&lt;/sup>. This option must be
+of optimised coefficients as outlined in &lt;sup id="fnref:5">&lt;a href="#fn:5" class="footnote-ref" role="doc-noteref">5&lt;/a>&lt;/sup>. This option must be
 accompanied by a &amp;ldquo;stencil&amp;rdquo; block. See
 &lt;a href="/documentation/input_deck/input_deck_control/#stencil_block">below.&lt;/a>&lt;/p>
 &lt;/li>
@@ -525,12 +525,12 @@ shown in the Figure. Full control over these coefficients can be
 achieved by specifying &amp;ldquo;custom&amp;rdquo; for the &amp;ldquo;maxwell_solver&amp;rdquo; parameter in
 the control block and then supplying a &amp;ldquo;stencil&amp;rdquo; block to provide the
 desired coefficient values.&lt;/p>
-&lt;p>&lt;img src="../Stencil.png" alt="Coefficient locations for the B_z field computational stencil in2D.">
+&lt;p>&lt;img src="Stencil.png" alt="Coefficient locations for the B_z field computational stencil in2D.">
 This option allows the user to specify an extended stencil scheme that
 has been specifically optimised for the simulation grid spacing and
-timestep. See &lt;sup id="fnref:8">&lt;a href="#fn:8" class="footnote-ref" role="doc-noteref">8&lt;/a>&lt;/sup> for further details.
+timestep. See &lt;sup id="fnref:5">&lt;a href="#fn:5" class="footnote-ref" role="doc-noteref">5&lt;/a>&lt;/sup> for further details.
 or see
-&lt;a href="https://github.com/Ablinne/optimize-stencil" target="_blank" rel="noopener">7&lt;/a> for stencil
+&lt;a href="https://github.com/Ablinne/optimize-stencil" target="_blank" rel="noopener">6&lt;/a> for stencil
 optimization code. Note that there is no option for changing the value
 of $\alpha_{x,y,z}$ since these are calculated using the following
 equations:
@@ -554,7 +554,7 @@ solver&lt;/li>
 &lt;h1 id="strided_current_filtering">Strided Current Filtering&lt;/h1>
 &lt;p>EPOCH 4.15 introduces strided multipass digital current filtering as
 described and benchmarked in the review by
-&lt;a href="https://www.sciencedirect.com/science/article/abs/pii/S163107211400148X" target="_blank" rel="noopener">Vey and
+&lt;a href="https://www.sciencedirect.com/science/article/abs/pii/S163107211400148X" target="_blank" rel="noopener">Vay and
 Godfrey&lt;/a>.
 This can be tuned to substantially damp high frequencies in the currents
 and can be used to reduce the effect of numerical Cherenkov radiation.
@@ -566,7 +566,7 @@ the smoothing function to be performed. If not present defaults to
 one iteration. More iterations will produce smoother results but
 will be slower.&lt;/li>
 &lt;li>&lt;code>smooth_compensation&lt;/code> - Logical flag. If true then
-perform a compensation step (see Vey and Godfrey) after the
+perform a compensation step (see Vay and Godfrey &lt;sup id="fnref:6">&lt;a href="#fn:6" class="footnote-ref" role="doc-noteref">6&lt;/a>&lt;/sup>) after the
 smoothing steps are performed. Total number of iterations if true is
 smooth_iterations + 1. If not specified defaults to false&lt;/li>
 &lt;li>&lt;code>smooth_strides&lt;/code> - Either a comma separated list of
@@ -653,38 +653,33 @@ acceleration,&amp;rdquo; Phys. Rev. Accel. Beams, vol. 16, no. 2, p.021301,
 &lt;a href="https://www.researchgate.net/publication/258097872_Numerical_growth_of_emittance_in_simulations_of_laser-wakefield_acceleration" target="_blank" rel="noopener">2&lt;/a>.&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li id="fn:3" role="doc-endnote">
-&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/li>
-&lt;li id="fn:4" role="doc-endnote">
 &lt;p>Pukhov, A., &amp;ldquo;Three-dimensional electromagnetic relativistic
 particle-in-cell code VLPL (Virtual Laser Plasma Lab)&amp;rdquo;, J. Plasma
 Phys., vol. 61, no. 3, p. 425, 1999
-&lt;a href="https://www.cambridge.org/core/journals/journal-of-plasma-physics/article/three-dimensional-electromagnetic-relativistic-particle-in-cell-code-vlpl-virtual-laser-plasma-lab/7FBA476D599E2F19DFEA3F0F2F84FFAB" target="_blank" rel="noopener">3&lt;/a>.&amp;#160;&lt;a href="#fnref:4" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;a href="https://www.cambridge.org/core/journals/journal-of-plasma-physics/article/three-dimensional-electromagnetic-relativistic-particle-in-cell-code-vlpl-virtual-laser-plasma-lab/7FBA476D599E2F19DFEA3F0F2F84FFAB" target="_blank" rel="noopener">3&lt;/a>.&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
-&lt;li id="fn:5" role="doc-endnote">
+&lt;li id="fn:4" role="doc-endnote">
 &lt;p>B. Cowan, D. Bruhwiler, J. Cary, E. Cormier-Michel, and C. Geddes,
 &amp;ldquo;Generalized algorithm for control of numerical dispersion in
 explicit time-domain electromagnetic simulations&amp;rdquo;, Phys. Rev.
 Accel. Beams, vol. 16, no. 4, p. 041303, 2013
-&lt;a href="https://journals.aps.org/prab/abstract/10.1103/PhysRevSTAB.16.041303" target="_blank" rel="noopener">4&lt;/a>.&amp;#160;&lt;a href="#fnref:5" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;a href="https://journals.aps.org/prab/abstract/10.1103/PhysRevSTAB.16.041303" target="_blank" rel="noopener">4&lt;/a>.&amp;#160;&lt;a href="#fnref:4" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:5" role="doc-endnote">
+&lt;p>A. Blinne, D. Schinkel, S. Kuschel, N. Elkina, S. G. Rykovanov,
+and M. Zepf, &amp;ldquo;A systematic approach to numerical dispersion in
+Maxwell solvers&amp;rdquo;, Computer Physics Communications, 00104655,
+2017
+&lt;a href="https://arxiv.org/pdf/1710.06829.pdf" target="_blank" rel="noopener">5&lt;/a>&amp;#160;&lt;a href="#fnref:5" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li id="fn:6" role="doc-endnote">
-&amp;#160;&lt;a href="#fnref:6" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/li>
-&lt;li id="fn:7" role="doc-endnote">
-&lt;p>A. Blinne, D. Schinkel, S. Kuschel, N. Elkina, S. G. Rykovanov,
-and M. Zepf, &amp;ldquo;A systematic approach to numerical dispersion in
-Maxwell solvers&amp;rdquo;, Computer Physics Communications, 00104655,
-2017
-&lt;a href="https://arxiv.org/pdf/1710.06829.pdf" target="_blank" rel="noopener">5&lt;/a>&amp;#160;&lt;a href="#fnref:7" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li id="fn:8" role="doc-endnote">
-&lt;p>A. Blinne, D. Schinkel, S. Kuschel, N. Elkina, S. G. Rykovanov,
-and M. Zepf, &amp;ldquo;A systematic approach to numerical dispersion in
-Maxwell solvers&amp;rdquo;, Computer Physics Communications, 00104655,
-2017
-&lt;a href="https://arxiv.org/pdf/1710.06829.pdf" target="_blank" rel="noopener">6&lt;/a>&amp;#160;&lt;a href="#fnref:8" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;p>J. L. Vay and B. B. Godfrey,
+&amp;ldquo;Modeling of relativistic plasmas with the particle-in-cell method&amp;rdquo;,
+Comptes Rendus Mcanique, 2014
+&lt;a href="http://www.sciencedirect.com/science/article/pii/S163107211400148X" target="_blank" rel="noopener">6&lt;/a>&amp;#160;&lt;a href="#fnref:6" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/section></description></item><item><title>boundaries block</title><link>/documentation/input_deck/input_deck_boundaries/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_boundaries/</guid><description>&lt;p>This block contains information about the boundary conditions for this
+&lt;/section></description></item><item><title>boundaries block</title><link>/documentation/input_deck/input_deck_boundaries.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_boundaries.html</guid><description>&lt;p>This block contains information about the boundary conditions for this
 run. See
 &lt;a href="/documentation/input_deck/input_deck">EPOCH input deck&lt;/a> for more
 information on the input deck.&lt;/p>
@@ -772,11 +767,13 @@ conditions&lt;/a>.&lt;/li>
 &lt;li>&lt;code>thermal&lt;/code> - See
 &lt;a href="#thermal_boundaries">#Thermal
 boundaries&lt;/a>.&lt;/li>
-&lt;li>&lt;code>**NOTE: If simple_laser, simple_outflow, cpml_laser, cpml_outflow or open are specified on one or more boundaries then the code will no longer necessarily conserve mass.**&lt;/code>
-&lt;span style="color:#ff0000">Note also that it is possible for the user
-to specify contradictory, unphysical boundary conditions. It is the
-users responsibility that these flags are set correctly.`&lt;/li>
 &lt;/ul>
+&lt;p>&lt;strong>NOTE: If simple_laser, simple_outflow, cpml_laser,
+cpml_outflow or open are specified on one or more boundaries then the
+code will no longer necessarily conserve mass.
+Note also that it is possible for the user
+to specify contradictory, unphysical boundary conditions. It is the
+users responsibility that these flags are set correctly.&lt;/strong>&lt;/p>
 &lt;h1 id="cpml_boundary_conditions">CPML boundary conditions&lt;/h1>
 &lt;p>There are now Convolutional Perfectly Matched Layer boundary conditions
 in EPOCH. The implementation closely follows that outlined in the book
@@ -796,7 +793,7 @@ terms of the number of grid cells. The default value is 6.&lt;/li>
 affect the behaviour of the absorbing media. The notation follows that
 used in the two references quoted above. Note that the
 &amp;ldquo;cpml_sigma_max&amp;rdquo; parameter is normalised by $\sigma_{\rm opt}$ which
-is taken to be 3.2/dx (see Taflove and Hagness[^3] for details). These
+is taken to be 3.2/dx (see Taflove and Hagness&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> for details). These
 are real valued parameters which take the following default values:
 cpml_kappa_max=20, cpml_a_max=0.15, cpml_sigma_max=0.7
 An example usage is as follows:&lt;/li>
@@ -844,7 +841,7 @@ Technol. Lett.,
 &lt;a href="https://www.researchgate.net/publication/228078114_Convolutional_PML_CPML_an_efficient_FDTD_implementation_of_the_CFS-PML_for_arbitrary_media" target="_blank" rel="noopener">2&lt;/a>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/section></description></item><item><title>species block</title><link>/documentation/input_deck/input_deck_species/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_species/</guid><description>&lt;p>This block contains information about the species of particles which are
+&lt;/section></description></item><item><title>species block</title><link>/documentation/input_deck/input_deck_species.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_species.html</guid><description>&lt;p>This block contains information about the species of particles which are
 used in the code. Also details of how these are initialised. See
 &lt;a href="/documentation/input_deck/input_deck">EPOCH
 input deck&lt;/a> for more information on the
@@ -1062,14 +1059,14 @@ FORTRAN array ordering rules (i.e. column-major order).
 &lt;h1 id="delta_f_parameters">Delta-f parameters&lt;/h1>
 &lt;p>The following entries are used for configuring the
 &lt;a href="/documentation/code_details/using_delta_f">Delta-f
-method&lt;/a>
-*number_density_back&lt;/p>
+method&lt;/a>&lt;/p>
 &lt;ul>
-&lt;li>drift_{x,y,z}_back&lt;/li>
-&lt;li>temp_{x,y,z}_back&lt;/li>
-&lt;li>temp_{x,y,z}_back_ev&lt;/li>
-&lt;li>temp_back&lt;/li>
-&lt;li>temp_back_ev&lt;/li>
+&lt;li>&lt;code>number_density_back&lt;/code>&lt;/li>
+&lt;li>&lt;code>drift_{x,y,z}_back&lt;/code>&lt;/li>
+&lt;li>&lt;code>temp_{x,y,z}_back&lt;/code>&lt;/li>
+&lt;li>&lt;code>temp_{x,y,z}_back_ev&lt;/code>&lt;/li>
+&lt;li>&lt;code>temp_back&lt;/code>&lt;/li>
+&lt;li>&lt;code>temp_back_ev&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;p>These all have the same meanings as the parameters listed above that
 don&amp;rsquo;t include the &amp;ldquo;_back&amp;rdquo; text, except that they specify the values to
@@ -1227,21 +1224,22 @@ particle momentum for a species.&lt;/p>
 not available for particle injectors. It does work correctly with the
 moving window.&lt;/p>
 &lt;ul>
-&lt;li>&lt;code>use_maxwell_juttner&lt;/code> - Logical flag determining
+&lt;li>
+&lt;p>&lt;code>use_maxwell_juttner&lt;/code> - Logical flag determining
 whether to sample from the Maxwell-Jüttner distribution when loading
 the particle species. If &amp;ldquo;T&amp;rdquo; then Maxwell-Jüttner is used and if
-&amp;ldquo;F&amp;rdquo; Maxwellian is used. The default value is &amp;ldquo;F&amp;rdquo;.&lt;/li>
-&lt;/ul>
-&lt;!-- -->
-&lt;ul>
-&lt;li>`fractional_tail_cutoff - The sampling is carried out using a
+&amp;ldquo;F&amp;rdquo; Maxwellian is used. The default value is &amp;ldquo;F&amp;rdquo;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>fractional_tail_cutoff&lt;/code> - The sampling is carried out using a
 rejection method with an arbitrary cut-off. This parameter takes a
 floating-point argument which specifies the fraction of maximum
 value at which the sampling should be cut off. Smaller values lead
 to distortion nearer the peak of the distribution but are faster to
 sample. Larger values lead to a better approximation of the
 distribution function but are slower to sample. The default value is
-0.0001.&lt;/li>
+0.0001.&lt;/p>
+&lt;/li>
 &lt;/ul>
 &lt;p>If drifts are specified with the Maxwell-Jüttner distribution then the
 distribution is calculated in the rest frame and then Lorentz
@@ -1299,7 +1297,7 @@ dist_fn = exp(-p0/px) * (px/p0)^(alpha)
 dist_fn_px_range = (0, pmax)
 end:species
 &lt;/code>&lt;/pre>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title>laser block</title><link>/documentation/input_deck/input_deck_laser/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_laser/</guid><description>&lt;p>This block contains information about laser boundary sources. See
+&lt;!-- ######################## Cross references ######################## --></description></item><item><title>laser block</title><link>/documentation/input_deck/input_deck_laser.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_laser.html</guid><description>&lt;p>This block contains information about laser boundary sources. See
 &lt;a href="/documentation/input_deck/input_deck">EPOCH
 input deck&lt;/a> for more information on the
 input deck.&lt;/p>
@@ -1414,8 +1412,8 @@ multiple of the period, the result was to introduce spurious
 oscillations behind the pulse. If the laser had a finite phase shift so
 that the amplitude did not start at zero, a similar effect would be
 observed on the front of the pulse.&lt;/p>
-&lt;p>&lt;img src="../Pulse2.png" alt="A laser pulse with a sharp cutoff shows numerical artefacts behind thepulse.">&lt;/p>
-&lt;p>&lt;img src="../Pulse1.png" alt="A laser pulse with a smooth temporal profile shows noartefacts.">&lt;/p>
+&lt;p>&lt;img src="Pulse2.png" alt="A laser pulse with a sharp cutoff shows numerical artefacts behind thepulse.">&lt;/p>
+&lt;p>&lt;img src="Pulse1.png" alt="A laser pulse with a smooth temporal profile shows noartefacts.">&lt;/p>
 &lt;p>The second figure instead used a Gaussian window function with a
 characteristic width of 8fs as well as using &lt;em>t_end&lt;/em> to introduce a
 hard cutoff. It can clearly be seen that there are no spurious
@@ -1436,7 +1434,7 @@ stability criteria and allows the resolution of sharp temporal
 gradients. This is an inferior solution since the FDTD scheme has
 increased error as the timestep is reduced from that for EM waves. EPOCH
 includes a high order field solver to attempt to reduce this.&lt;/p>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title>fields block</title><link>/documentation/input_deck/input_deck_fields/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_fields/</guid><description>&lt;p>This block contains information about the EM fields specified at the
+&lt;!-- ######################## Cross references ######################## --></description></item><item><title>fields block</title><link>/documentation/input_deck/input_deck_fields.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_fields.html</guid><description>&lt;p>This block contains information about the EM fields specified at the
 start of the simulation. See
 &lt;a href="/documentation/input_deck/input_deck">EPOCH input
 deck&lt;/a> for more information on the input
@@ -1470,7 +1468,7 @@ for more details.
 Any valid maths parser expression can be used to set up the fields, and
 no check is made to ensure that the $\nabla.B = 0$ is satisfied.&lt;/li>
 &lt;/ul>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title>window block</title><link>/documentation/input_deck/input_deck_window/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_window/</guid><description>&lt;p>This block contains information about the moving window if the code is
+&lt;!-- ######################## Cross references ######################## --></description></item><item><title>window block</title><link>/documentation/input_deck/input_deck_window.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_window.html</guid><description>&lt;p>This block contains information about the moving window if the code is
 used in that fashion. See
 &lt;a href="/documentation/input_deck/input_deck">EPOCH input
 deck&lt;/a> for more information on the input
@@ -1498,9 +1496,7 @@ same as setting move_window to &amp;ldquo;F&amp;rdquo;.&lt;/li>
 &lt;li>&lt;code>window_v_x&lt;/code> - The speed in m/s of the window.&lt;/li>
 &lt;li>&lt;code>window_start_time&lt;/code> - The time in seconds at which the
 window should start moving.&lt;/li>
-&lt;/ul>
-&lt;p>- The time in seconds at which the window should stop moving.&lt;/p>
-&lt;ul>
+&lt;li>&lt;code>window_stop_time&lt;/code> - The time in seconds at which the window should stop moving.&lt;/li>
 &lt;li>&lt;code>bc_x_min_after_move&lt;/code> - The boundary condition which
 should apply to the left boundary after the window has started moving.
 This is to allow the swapping of a laser boundary to a simple outflow
@@ -1510,7 +1506,8 @@ the boundary isn&amp;rsquo;t changed when the window starts moving.
 &amp;ldquo;xbc_left_after_move&amp;rdquo; is accepted as a synonym.&lt;/li>
 &lt;li>&lt;code>bc_x_max_after_move&lt;/code> - The boundary condition which
 should apply to the right boundary after the window has started moving.
-&amp;ldquo;xbc_right_after_move&amp;rdquo; is accepted as a synonym. - &amp;ldquo;y&amp;rdquo; and &amp;ldquo;z&amp;rdquo;
+&amp;ldquo;xbc_right_after_move&amp;rdquo; is accepted as a synonym.&lt;/li>
+&lt;li>&lt;code>bc_{y,z}_{min,max}_after_move&lt;/code> - &amp;ldquo;y&amp;rdquo; and &amp;ldquo;z&amp;rdquo;
 versions of the previous two parameters. &lt;strong>ybc_down_after_move&lt;/strong>,
 &lt;strong>ybc_up_after_move&lt;/strong>, &lt;strong>zbc_back_after_move&lt;/strong> and
 &lt;strong>zbc_front_after_move&lt;/strong> are accepted as synonyms.&lt;/li>
@@ -1545,7 +1542,7 @@ more tuning. We can&amp;rsquo;t help with this in general.&lt;/li>
 &lt;li>Load of particles from file is not supported since it can&amp;rsquo;t be made
 to work in general.&lt;/li>
 &lt;/ul>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title>output block</title><link>/documentation/input_deck/input_deck_output_block/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_output_block/</guid><description>&lt;p>This block contains information about when and how to dump output files.
+&lt;!-- ######################## Cross references ######################## --></description></item><item><title>output block</title><link>/documentation/input_deck/input_deck_output_block.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_output_block.html</guid><description>&lt;p>This block contains information about when and how to dump output files.
 See
 &lt;a href="/documentation/input_deck/input_deck">EPOCH input deck&lt;/a> for more information
 on the input deck.&lt;/p>
@@ -1617,15 +1614,15 @@ end:output
 &lt;p>There are three types of output dump in EPOCH which are used for
 different purposes. These types are:&lt;/p>
 &lt;ul>
-&lt;li>normal - The most frequent type of output dump in EPOCH is a normal
+&lt;li>&lt;code>normal&lt;/code> - The most frequent type of output dump in EPOCH is a normal
 dump.&lt;/li>
-&lt;li>full - A full dump is usually written every 10 or so normal dumps. A
+&lt;li>&lt;code>full&lt;/code> - A full dump is usually written every 10 or so normal dumps. A
 full dump contains all the data that a normal dump contains and
 should also contain any information which is needed only
 infrequently, whether this is the full particle information or a
 large distribution function. It is possible to turn off full dumps
 completely.&lt;/li>
-&lt;li>restart - A restart dump is a dump where the code guarantees to
+&lt;li>&lt;code>restart&lt;/code> - A restart dump is a dump where the code guarantees to
 write enough data to allow the code to restart from the output.
 Output dumps are guaranteed to contain all the information in a
 normal dump and, if they coincide with the timing for a full dump,
@@ -1746,12 +1743,12 @@ value is 0.&lt;/li>
 &lt;li>&lt;code>nstep_stop&lt;/code> - Integer parameter which specifies the step
 number at which to stop considering output for the block. The default
 value is the largest possible integer.&lt;/li>
-&lt;li>Floating point parameter which specifies the elapsed walltime in
+&lt;li>&lt;code>walltime_start&lt;/code> - Floating point parameter which specifies the elapsed walltime in
 seconds at which to start considering output for the block. Note that if
 &lt;strong>dump_first&lt;/strong> or &lt;strong>dump_last&lt;/strong> are set to true for this block then
 dumps will occur at the first or last timestep regardless of the value
 of the &lt;strong>walltime_start&lt;/strong> parameter. The default value is 0.&lt;/li>
-&lt;li>Floating point parameter which specifies the elapsed walltime in
+&lt;li>&lt;code>walltime_stop&lt;/code> - Floating point parameter which specifies the elapsed walltime in
 seconds at which to stop considering output for the block. The default
 value is the largest possible float.&lt;/li>
 &lt;li>&lt;code>dump_cycle&lt;/code> - If this is set to a positive integer then
@@ -1854,12 +1851,12 @@ most users.&lt;/li>
 &lt;li>&lt;code>qed_energy&lt;/code> - The dumpmask for per-particle QED-related
 particle energy. Restart variable. This option is only supplied for
 debugging purposes and should not be required by most users.&lt;/li>
-&lt;li>The dumpmask for the work exerted by the fields on each particle
+&lt;li>&lt;code>work_{x,y,z}&lt;/code> - The dumpmask for the work exerted by the fields on each particle
 during the last time step. The work is divided into its three spatial
 components. The output is in numbers of $mc^2$ corresponding to the
 particle&amp;rsquo;s $\gamma$-factor. Requires compiler flag
 &amp;ldquo;WORK_DONE_INTEGRATED&amp;rdquo;.&lt;/li>
-&lt;li>Same as above, but the work is integrated over the entire simulation
+&lt;li>&lt;code>work_{x,y,z}_total&lt;/code> - Same as above, but the work is integrated over the entire simulation
 duration. The sum of all three components equals the particle&amp;rsquo;s
 $\gamma$-factor. Requires compiler flag &amp;ldquo;WORK_DONE_INTEGRATED&amp;rdquo;.&lt;/li>
 &lt;li>&lt;code>id&lt;/code> - Global particle ID. See below for details.
@@ -1915,15 +1912,15 @@ have species dumpmask.&lt;/li>
 have species dumpmask. The synonym &amp;ldquo;ppc&amp;rdquo; may also be used.&lt;/li>
 &lt;li>&lt;code>average weight&lt;/code> - Average of weight of the particles in
 each cell. Can have species dumpmask.&lt;/li>
+&lt;li>&lt;code>average_p{x,y,z}&lt;/code> - Average momentum in each direction of the particles in each cell. Can have species dumpmask.&lt;/li>
 &lt;li>&lt;code>temperature&lt;/code> - Isotropic temperature on grid in $K$.
 Calculated from standard deviation of particle momenta, so in general
 matches mean kinetic energy only for isotropic plasma with no net drift.
-The synonym &amp;ldquo;temp&amp;rdquo; may also be used. Can have species dump mask.
--The temperature in each of the {x,y,z} directions, respectively, in
+The synonym &amp;ldquo;temp&amp;rdquo; may also be used. Can have species dump mask.&lt;/li>
+&lt;li>&lt;code>temperature_{x,y,z}&lt;/code> - The temperature in each of the {x,y,z} directions, respectively, in
 $K$. The synonyms &amp;ldquo;temp_{x,y,z}&amp;rdquo; and &amp;ldquo;t{x,y,z}&amp;rdquo; may also be used.
 Can have species dumpmask.&lt;/li>
-&lt;li>&lt;code>poynt_flux&lt;/code> - Poynting flux in each direction in
-$W/m^2$.&lt;/li>
+&lt;li>&lt;code>poynt_flux&lt;/code> - Poynting flux in each direction in $W/m^2$.&lt;/li>
 &lt;/ul>
 &lt;h1 id="other_variables">Other Variables&lt;/h1>
 &lt;ul>
@@ -2058,8 +2055,7 @@ can only be used with named output blocks. The values are given as a
 comma separated list. eg. &amp;ldquo;dump_at_nsteps = 5, 11, 15&amp;rdquo;. The name
 &amp;ldquo;nsteps_dump&amp;rdquo; is accepted as a synonym. By default the list is
 empty.&lt;/li>
-&lt;/ul>
-&lt;p>- Floating point parameter which specifies a set of elapsed walltimes
+&lt;li>&lt;code>dump_at_walltimes&lt;/code> - Floating point parameter which specifies a set of elapsed walltimes
 at which to write the current output block. This can only be used with
 named output blocks. The values are given as a comma separated list. eg.
 &amp;ldquo;dump_at_walltimes = 10, 100.1, 250.5&amp;rdquo;. These times are the total
@@ -2067,23 +2063,16 @@ elapsed time in seconds since the start of the simulation. Note that if
 the simulation has been restarted then the total elapsed time will
 include the accumulated walltime of all previous runs that were used to
 produce the restart dump. The name &lt;strong>walltimes_dump&lt;/strong> is accepted as a
-synonym. By default the list is empty.&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>Floating point parameter which specifies the interval between output
+synonym. By default the list is empty.&lt;/li>
+&lt;li>&lt;code>walltime_interval&lt;/code> - Floating point parameter which specifies the interval between output
 dumps in elapsed walltime seconds. Setting zero or negative means that
-the code will not output based on this condition. The default value is
--1.0.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>file_prefix&lt;/code> - String parameter. It is sometimes useful
+the code will not output based on this condition. The default value is -1.0.&lt;/li>
+&lt;li>&lt;code>file_prefix&lt;/code> - String parameter. It is sometimes useful
 to distinguish between dumps generated by the different output blocks.
 This parameter allows the user to supply a file prefix to be prepended
 to all dumps generated by the current output block. See below for
-further details. The default value is an empty string.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>rolling_restart&lt;/code> - Logical flag. If set to &amp;ldquo;T&amp;rdquo;, this sets
+further details. The default value is an empty string.&lt;/li>
+&lt;li>&lt;code>rolling_restart&lt;/code> - Logical flag. If set to &amp;ldquo;T&amp;rdquo;, this sets
 the parameters required for performing rolling restarts on the current
 block. It is a shorthand for setting the following flags: &amp;ldquo;dump_cycle =
 1&amp;rdquo;, &amp;ldquo;restartable = T&amp;rdquo; and &amp;ldquo;file_prefix = roll&amp;rdquo;. With rolling restarts
@@ -2091,25 +2080,16 @@ enabled the first file will be named &amp;ldquo;roll0000.sdf&amp;rdquo; and the 
 be &amp;ldquo;roll0001.sdf&amp;rdquo;. The third dump will again be named &amp;ldquo;roll0000.sdf&amp;rdquo;,
 overwriting the first one. In this way, restart dumps can be generated
 throughout the duration of the simulation whilst limiting the amount of
-disk space used.
-The following parameters cannot be used in conjunction with the new
+disk space used.&lt;/li>
+&lt;/ul>
+&lt;p>The following parameters cannot be used in conjunction with the new
 style of output block:&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>full_dump_every&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>restart_dump_every&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>force_first_to_be_restartable&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>force_last_to_be_restartable&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>use_offset_grid&lt;/p>
-&lt;/li>
+&lt;ul>
+&lt;li>&lt;code>full_dump_every&lt;/code>&lt;/li>
+&lt;li>&lt;code>restart_dump_every&lt;/code>&lt;/li>
+&lt;li>&lt;code>force_first_to_be_restartable&lt;/code>&lt;/li>
+&lt;li>&lt;code>force_last_to_be_restartable&lt;/code>&lt;/li>
+&lt;li>&lt;code>use_offset_grid&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;p>The &amp;ldquo;file_prefix&amp;rdquo; parameter warrants some further discussion. This
 parameter prepends the given prefix to all files generated by the output
@@ -2179,7 +2159,7 @@ end:output
 &lt;/code>&lt;/pre>
 &lt;p>In this example, at step 2 a0000.sdf contains ex, step 3 a0001.sdf
 contains ey, step 4 a0002.sdf contains ex, ey and b0000.sdf contains ez.&lt;/p>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title>output_global block</title><link>/documentation/input_deck/input_deck_output_global/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_output_global/</guid><description>&lt;p>This block contains parameters which should be applied to all output
+&lt;!-- ######################## Cross references ######################## --></description></item><item><title>output_global block</title><link>/documentation/input_deck/input_deck_output_global.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_output_global.html</guid><description>&lt;p>This block contains parameters which should be applied to all output
 blocks. See
 &lt;a href="/documentation/input_deck/input_deck">EPOCH input deck&lt;/a> for more
 information on the input deck.&lt;/p>
@@ -2224,12 +2204,12 @@ value is 0.&lt;/li>
 &lt;li>&lt;code>nstep_stop&lt;/code> - Integer parameter which specifies the step
 number at which to stop considering output for the block. The default
 value is the largest possible integer.&lt;/li>
-&lt;li>Floating point parameter which specifies the elapsed walltime in
+&lt;li>&lt;code>walltime_start&lt;/code> - Floating point parameter which specifies the elapsed walltime in
 seconds at which to start considering output for all output blocks. Note
 that if &lt;strong>dump_first&lt;/strong> or &lt;strong>dump_last&lt;/strong> are set to true for any blocks
 then dumps will occur at the first or last timestep regardless of the
 value of the &lt;strong>walltime_start&lt;/strong> parameter. The default value is 0.&lt;/li>
-&lt;li>Floating point parameter which specifies the elapsed walltime in
+&lt;li>&lt;code>walltime_stop&lt;/code> - Floating point parameter which specifies the elapsed walltime in
 seconds at which to stop considering output all output blocks. The
 default value is the largest possible float.&lt;/li>
 &lt;li>&lt;code>sdf_buffer_size&lt;/code> - Integer parameter. When writing
@@ -2257,7 +2237,7 @@ ignored when restarting. To force a dump to occur immediately after
 restart, set &lt;code>dump_first_after_restart = T&lt;/code> in the output block. The
 default value is &amp;ldquo;F&amp;rdquo;.&lt;/li>
 &lt;/ul>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title>dist_fn block</title><link>/documentation/input_deck/input_deck_dist_fn/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_dist_fn/</guid><description>&lt;p>This block contains information about distribution functions that should
+&lt;!-- ######################## Cross references ######################## --></description></item><item><title>dist_fn block</title><link>/documentation/input_deck/input_deck_dist_fn.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_dist_fn.html</guid><description>&lt;p>This block contains information about distribution functions that should
 be calculated for output. See
 &lt;a href="/documentation/input_deck/input_deck">EPOCH input
 deck&lt;/a> for more information on the input
@@ -2364,7 +2344,7 @@ limitation: it ignores particle shape functions when calculating
 properties on the spatial axis, meaning that the result is less smooth
 than normal properties from the code.&lt;/li>
 &lt;/ul>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title>probe block</title><link>/documentation/input_deck/input_deck_probe/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_probe/</guid><description>&lt;p>This block contains information about particle probes used for output.
+&lt;!-- ######################## Cross references ######################## --></description></item><item><title>probe block</title><link>/documentation/input_deck/input_deck_probe.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_probe.html</guid><description>&lt;p>This block contains information about particle probes used for output.
 See
 &lt;a href="/documentation/input_deck/input_deck">EPOCH input deck&lt;/a> for more information
 on the input deck.&lt;/p>
@@ -2422,7 +2402,7 @@ memory requirements can increase drastically if this code only dumps
 probe information infrequently. If this is set to &lt;strong>never&lt;/strong> then the
 code effectively never uses the probe.&lt;/li>
 &lt;/ul>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title>collisions block</title><link>/documentation/input_deck/input_deck_collisions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_collisions/</guid><description>&lt;p>This block contains information about particle collisions. See
+&lt;!-- ######################## Cross references ######################## --></description></item><item><title>collisions block</title><link>/documentation/input_deck/input_deck_collisions.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_collisions.html</guid><description>&lt;p>This block contains information about particle collisions. See
 &lt;a href="/documentation/input_deck/input_deck">EPOCH
 input deck&lt;/a> for more information on the
 input deck.&lt;/p>
@@ -2432,35 +2412,27 @@ Pérez et al &lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="
 Yonemura&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>. This adds a new output block named &amp;ldquo;collisions&amp;rdquo; which
 accepts the following four parameters.&lt;/p>
 &lt;ul>
-&lt;li>
-&lt;p>&lt;code>use_collisions&lt;/code> - This is a logical flag which determines
+&lt;li>&lt;code>use_collisions&lt;/code> - This is a logical flag which determines
 whether or not to call the collision routine. If omitted, the default is
 &amp;ldquo;T&amp;rdquo; if any of the frequency factors are non-zero (see below) and &amp;ldquo;F&amp;rdquo;
-otherwise.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>This logical flag determines whether the scattering angle of
+otherwise.&lt;/li>
+&lt;li>&lt;code>use_nanbu&lt;/code> - This logical flag determines whether the scattering angle of
 Pérez/Nanbu will be used. The default is &amp;ldquo;T&amp;rdquo;. If &amp;ldquo;F&amp;rdquo;, the
-Sentoku-Kemp algorithm will be used.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>coulomb_log&lt;/code> - This may either be set to a real value,
+Sentoku-Kemp algorithm will be used.&lt;/li>
+&lt;li>&lt;code>coulomb_log&lt;/code> - This may either be set to a real value,
 specifying the Coulomb logarithm to use when scattering the
 particles or to the special value &amp;ldquo;auto&amp;rdquo;. If &amp;ldquo;auto&amp;rdquo; is used then the
 routine will calculate a value based on the local temperature and
 density of the particle species being scattered, along with the two
-particle charges. If omitted, the default value is &amp;ldquo;auto&amp;rdquo;.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>collide&lt;/code> - This sets up a symmetric square matrix of
+particle charges. If omitted, the default value is &amp;ldquo;auto&amp;rdquo;.&lt;/li>
+&lt;li>&lt;code>collide&lt;/code> - This sets up a symmetric square matrix of
 size $nspecies,\times,nspecies$ containing the collision frequency
 factors to use between particle species. The element (s1,s2) gives
 the frequency factor used when colliding species s1 with species s2.
 If the factor is less than zero, no collisions are performed. If it
 is equal to one, collisions are performed normally. For any value
 between zero and one, the collisions are performed using a frequency
-multiplied by the given factor.&lt;/p>
-&lt;/li>
+multiplied by the given factor.&lt;/li>
 &lt;/ul>
 &lt;p>If &amp;ldquo;collide&amp;rdquo; has a value of &amp;ldquo;all&amp;rdquo; then all elements of the matrix are
 set to one. If it has a value of &amp;ldquo;none&amp;rdquo; then all elements are set to
@@ -2522,7 +2494,7 @@ J. Comput. Phys., 1998.
 &lt;a href="https://doi.org/10.1006/jcph.1998.6049" target="_blank" rel="noopener">3&lt;/a>&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/section></description></item><item><title>qed block</title><link>/documentation/input_deck/input_deck_qed/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_qed/</guid><description>&lt;p>This block contains information about QED pair production. See
+&lt;/section></description></item><item><title>qed block</title><link>/documentation/input_deck/input_deck_qed.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_qed.html</guid><description>&lt;p>This block contains information about QED pair production. See
 &lt;a href="/documentation/input_deck/input_deck">EPOCH
 input deck&lt;/a> for more information on the
 input deck.&lt;/p>
@@ -2543,12 +2515,7 @@ then the radiation reaction force is calculated but the properties of
 the emitted photons are not tracked. The default is &amp;ldquo;F&amp;rdquo;.&lt;/li>
 &lt;li>&lt;code>photon_energy_min&lt;/code> - Minimum energy of produced photons.
 Radiation reaction is calculated for photons of all energies, but
-photons with energy below this cutoff are not tracked. The default is&lt;/li>
-&lt;/ul>
-&lt;ol start="0">
-&lt;li>&lt;/li>
-&lt;/ol>
-&lt;ul>
+photons with energy below this cutoff are not tracked. The default is 0.&lt;/li>
 &lt;li>&lt;code>photon_dynamics&lt;/code> - Logical flag which specifies whether
 to push photons. If &amp;ldquo;F&amp;rdquo; then photons are generated, but their motion
 through the domain is not simulated and they stay where they were
@@ -2646,7 +2613,7 @@ interactions,&amp;rdquo; J. Comp. Phys., vol. 260, p. 273-285,
 &lt;a href="https://doi.org/10.1016/j.jcp.2013.12.007" target="_blank" rel="noopener">2&lt;/a>.&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/section></description></item><item><title>subset block</title><link>/documentation/input_deck/input_deck_subset/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_subset/</guid><description>&lt;p>This block contains configuration for filters which can be used to
+&lt;/section></description></item><item><title>subset block</title><link>/documentation/input_deck/input_deck_subset.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_subset.html</guid><description>&lt;p>This block contains configuration for filters which can be used to
 modify the data to be output. See
 &lt;a href="/documentation/input_deck/input_deck">EPOCH input
 deck&lt;/a> for more information on the input
@@ -2781,7 +2748,7 @@ time. &amp;ldquo;persist_after_step&amp;rdquo; is accepted as an alias.&lt;/li>
 &lt;p>If the input deck is edited on restart to add a new persistent subset
 then it must be added &lt;strong>after&lt;/strong> existing persistent subsets or problems
 may occur on restart.&lt;/p>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title>constant block</title><link>/documentation/input_deck/input_deck_constant/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_constant/</guid><description>&lt;p>This block contains information about user defined constants and
+&lt;!-- ######################## Cross references ######################## --></description></item><item><title>constant block</title><link>/documentation/input_deck/input_deck_constant.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_constant.html</guid><description>&lt;p>This block contains information about user defined constants and
 expressions. These are designed to simplify the initial condition setup.
 See
 &lt;a href="/documentation/input_deck/input_deck">EPOCH input deck&lt;/a> for more information
@@ -2835,7 +2802,7 @@ and &lt;em>c&lt;/em>) and also several functions (&lt;em>critical&lt;/em>, &lt;e
 &lt;em>sqrt&lt;/em>). These are described
 &lt;a href="/documentation/code_details/maths_parser/#constants">here&lt;/a> and
 &lt;a href="/documentation/code_details/maths_parser/#functions">here&lt;/a>.&lt;/p>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title>injector block</title><link>/documentation/input_deck/input_deck_injector/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_injector/</guid><description>&lt;p>The &lt;em>injector&lt;/em> block specifies a particle source to be introduced
+&lt;!-- ######################## Cross references ######################## --></description></item><item><title>injector block</title><link>/documentation/input_deck/input_deck_injector.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_injector.html</guid><description>&lt;p>The &lt;em>injector&lt;/em> block specifies a particle source to be introduced
 through a simulation boundary. Each injector block specifies a source of
 a single species of particle defined by a density, centre of mass drift
 momentum, temperature and number of simulation particles per cell. The
@@ -2883,38 +2850,55 @@ profile for the moving window that stops at times when particles are to
 be injected and then starts again once the injection is complete.&lt;/p>
 &lt;h1 id="keys">Keys&lt;/h1>
 &lt;ul>
-&lt;li>boundary - specifies which boundary to attach the particle source
+&lt;li>&lt;code>boundary&lt;/code> - specifies which boundary to attach the particle source
 too. Same specification as the
 &lt;a href="/documentation/input_deck/input_deck_laser">laser block&lt;/a>, so
 permitted values are x_min, x_max, y_min, y_max, z_min and
 z_max&lt;/li>
-&lt;li>species - specifies which species should be injected through the
+&lt;li>&lt;code>species&lt;/code> - specifies which species should be injected through the
 boundary. Just specify the name of the species required.&lt;/li>
-&lt;li>t_start - Time at which to start the injector&lt;/li>
-&lt;li>t_end - Time at which to end the injector&lt;/li>
-&lt;li>npart_per_cell - target pseudo-particle density for the injector.
+&lt;li>&lt;code>t_start&lt;/code> - Time at which to start the injector&lt;/li>
+&lt;li>&lt;code>t_end&lt;/code> - Time at which to end the injector&lt;/li>
+&lt;li>&lt;code>npart_per_cell&lt;/code> - target pseudo-particle density for the injector.
 Average number of particles injected will be this value or slightly
 higher if very few particles are specified&lt;/li>
-&lt;li>number_density - Number density of the particle source in $m^{-3}$.
+&lt;li>&lt;code>number_density&lt;/code> - Number density of the particle source in $m^{-3}$.
 Can be space varying along the boundary to which the injector is
 attached and time varying&lt;/li>
-&lt;li>number_density_min - Minimum number density in $m^{-3}$ below
+&lt;li>&lt;code>number_density_min&lt;/code> - Minimum number density in $m^{-3}$ below
 which pseudo particles are not loaded. Use if the density has a
 profile to avoid injecting low weight particles in low density
 regions&lt;/li>
-&lt;li>temp_x - Temperature in x direction (K)&lt;/li>
-&lt;li>temp_y - Temperature in y direction (K)&lt;/li>
-&lt;li>temp_z - Temperature in z direction (K)&lt;/li>
-&lt;li>temp - Temperature in all directions (K)&lt;/li>
-&lt;li>drift_x - Momentum drift in x direction in $kgm/s$&lt;/li>
-&lt;li>drift_y - Momentum drift in x direction in $kgm/s$&lt;/li>
-&lt;li>drift_z - Momentum drift in x direction in $kgm/s$&lt;/li>
+&lt;li>&lt;code>number_density_max&lt;/code> - Maximum particle number density in $m^{-3}$.
+When the number density in a cell rises above &lt;em>number_density_max&lt;/em>
+the injector clips the density to number_density_max allowing easy
+implementation of exponential rises to plateaus for time-varying injectors.
+Note that the number of particles per cell is kept fixed and the number
+density adjustment is achieved by modifying the particle weight. This
+flag has no effect for particles with per-species weighting. If the
+flag has a negative value then no clipping is performed.
+This is the default.&lt;/li>
+&lt;li>&lt;code>temp_x&lt;/code> - Temperature in x direction (K)&lt;/li>
+&lt;li>&lt;code>temp_y&lt;/code> - Temperature in y direction (K)&lt;/li>
+&lt;li>&lt;code>temp_z&lt;/code> - Temperature in z direction (K)&lt;/li>
+&lt;li>&lt;code>temp&lt;/code> - Sets an isotropic temperature distribution in Kelvin. If both temp
+and a specific temp_x, temp_y, temp_z parameter is specified then the last
+to appear in the deck has precedence. If neither are given then the
+injector will have a default temperature of zero Kelvin.&lt;/li>
+&lt;li>&lt;code>temp_{x,y,z}_ev, temp_ev&lt;/code> - These are the same as the temperature
+parameters described above except the units are given in electronvolts
+rather than Kelvin, i.e. using 1ev = 11604.5K .&lt;/li>
+&lt;li>&lt;code>drift_x&lt;/code> - Momentum drift in x direction in $kg.m/s$&lt;/li>
+&lt;li>&lt;code>drift_y&lt;/code> - Momentum drift in y direction in $kg.m/s$&lt;/li>
+&lt;li>&lt;code>drift_z&lt;/code> - Momentum drift in z direction in $kg.m/s$&lt;/li>
+&lt;li>&lt;code>drift_{x,y,z}&lt;/code> - Specifies a momentum space offset in $kg m/s$ to the
+distribution function for this injector. By default, the drift is zero.&lt;/li>
+&lt;li>&lt;code>use_flux_maxwellian&lt;/code> - Logical flag to determine whether to use an
+accelerated flux Maxwellian rather than a drifting Maxwellian. This
+calculates the flux due to passing a Maxwellian source into an
+electrostatic accelerator instead of a drifting Maxwellian. If your
+particle source is a lab accelerator then you may want to set this to true.&lt;/li>
 &lt;/ul>
-&lt;p>- Logical flag to determine whether to use an accelerated flux
-Maxwellian rather than a drifting Maxwellian. This calculates the flux
-due to passing a Maxwellian source into an electrostatic accelerator
-instead of a drifting Maxwellian. If your particle source is a lab
-accelerator then you may want to set this to true.&lt;/p>
 &lt;h1 id="example_deck">Example Deck&lt;/h1>
 &lt;pre>&lt;code class="language-perl">begin:injector
 boundary = x_min
@@ -2929,7 +2913,7 @@ end:injector
 &lt;p>Currently injectors are a beta feature of EPOCH. We believe them to work
 correctly, but unusual results must be considered suspect. If you get
 unexpected results, please contact the EPOCH development team.&lt;/p>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title>Input deck antenna</title><link>/documentation/input_deck/input_deck_antenna/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_antenna/</guid><description>&lt;p>Antennae allow you to specify currents in the simulation domain that are
+&lt;!-- ######################## Cross references ######################## --></description></item><item><title>Input deck antenna</title><link>/documentation/input_deck/input_deck_antenna.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_antenna.html</guid><description>&lt;p>Antennae allow you to specify currents in the simulation domain that are
 added to the self consistent currents from the core solver. You can
 either specify the currents entirely manually or you can specify a
 frequency and a profile for each current component. You can have as many
@@ -2947,22 +2931,22 @@ end:antenna
 &lt;/code>&lt;/pre>
 &lt;h1 id="keys">Keys&lt;/h1>
 &lt;ul>
-&lt;li>jx - Profile for current in x direction. If you do not specify the
+&lt;li>&lt;code>jx&lt;/code> - Profile for current in x direction. If you do not specify the
 omega key then you should include any time dependence manually. If
 the omega key is specified any time variation in jx will be
 multiplicatively combined with the sinusoidal variation from omega.
 Can be time and space varying.&lt;/li>
-&lt;li>jy - Profile for current in y direction. If you do not specify the
+&lt;li>&lt;code>jy&lt;/code> - Profile for current in y direction. If you do not specify the
 omega key then you should include any time dependence manually. If
 the omega key is specified any time variation in jy will be
 multiplicatively combined with the sinusoidal variation from omega.
 Can be time and space varying.&lt;/li>
-&lt;li>jz - Profile for current in z direction. If you do not specify the
+&lt;li>&lt;code>jz&lt;/code> - Profile for current in z direction. If you do not specify the
 omega key then you should include any time dependence manually. If
 the omega key is specified any time variation in jz will be
 multiplicatively combined with the sinusoidal variation from omega.
 Can be time and space varying.&lt;/li>
-&lt;li>ranges - Array of (min,max) pairs for each dimension of your
+&lt;li>&lt;code>ranges&lt;/code> - Array of (min,max) pairs for each dimension of your
 simulation (1 pair for EPOCH1d, 2 pairs for EPOCH2D and 3 pairs for
 EPOCH3D) showing the domain over which the antenna should operate.
 Describes the region of space over which the current from the
@@ -2971,17 +2955,17 @@ propagate everywhere in the simulation domain. If ranges is not
 present then the antenna will be applied to the whole domain.
 Performance of the antenna block will be highest if you set the
 smallest range possible.&lt;/li>
-&lt;li>omega - Optional frequency for the antenna. If this key is set then
+&lt;li>&lt;code>omega&lt;/code> - Optional frequency for the antenna. If this key is set then
 the current will vary sinusoidally with the specified frequency.
 This is faster to run than specifying a sinusoidal profile in the
 jx, jy or jz keys but performs the same (for a frequency that
 doesn&amp;rsquo;t change in time, see Time variability section). Can be time
 varying, but not space varying&lt;/li>
-&lt;li>start_time - Time after which to start applying the antenna
+&lt;li>&lt;code>start_time&lt;/code> - Time after which to start applying the antenna
 currents. Can be &amp;ldquo;start&amp;rdquo; to apply from the start of the
 simulation. If key is not present antenna runs from the start of the
 simulation.&lt;/li>
-&lt;li>stop_time - Time after which to cease applying the antenna
+&lt;li>&lt;code>stop_time&lt;/code> - Time after which to cease applying the antenna
 currents. Can be &amp;ldquo;end&amp;rdquo; to apply until the end of the simulation.
 If key is not present antenna runs until the end of the simulation.&lt;/li>
 &lt;/ul>
@@ -2996,7 +2980,7 @@ reduces to $\sin(\omega t)$. This gives the correct behaviour for
 chirped antennae&lt;/p>
 &lt;h1 id="example_deck_1">Example deck&lt;/h1>
 &lt;p>An example deck for this block can be found in
-example_decks/antenna.deck. The deck should take 5-20 seconds to run.&lt;/p></description></item><item><title>Input deck particle file</title><link>/documentation/input_deck/input_deck_particle_file/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_particle_file/</guid><description>&lt;p>This block contains information about the block used to load particles
+example_decks/antenna.deck. The deck should take 5-20 seconds to run.&lt;/p></description></item><item><title>Input deck particle file</title><link>/documentation/input_deck/input_deck_particle_file.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/input_deck_particle_file.html</guid><description>&lt;p>This block contains information about the block used to load particles
 from file. See
 &lt;a href="/documentation/input_deck/input_deck">EPOCH input deck&lt;/a> for more
 information on the input deck.&lt;/p>
@@ -3061,7 +3045,7 @@ the file to be ignored, may be specified multiple times. see for
 more details of behaviour.&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;!-- ######################## Cross references ######################## --></description></item><item><title>Binary files</title><link>/documentation/input_deck/binary_files/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/binary_files/</guid><description>&lt;p>There are several input deck blocks which can read conditions directly
+&lt;!-- ######################## Cross references ######################## --></description></item><item><title>Binary files</title><link>/documentation/input_deck/binary_files.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/input_deck/binary_files.html</guid><description>&lt;p>There are several input deck blocks which can read conditions directly
 from a user-specified file. These include the , and . In all such cases,
 the files specified must be in a simple binary format, often referred to
 as &amp;ldquo;raw&amp;rdquo; binary files.&lt;/p>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Visualising output | EPOCH</title><link>/documentation/visualising_output/</link><atom:link href="/documentation/visualising_output/index.xml" rel="self" type="application/rss+xml"/><description>Visualising output</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><image><url>/images/logo_hub4b4d6a0f57638acebb5550a80c8c030_9243_300x300_fit_lanczos_2.png</url><title>Visualising output</title><link>/documentation/visualising_output/</link></image><item><title>IDL or GDL</title><link>/documentation/visualising_output/visualising_sdf_files_with_idl_or_gdl/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/visualising_output/visualising_sdf_files_with_idl_or_gdl/</guid><description>&lt;h1 id="using_idl_to_visualise_data">Using IDL to visualise data&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Visualising output | EPOCH</title><link>/documentation/visualising_output.html</link><atom:link href="/documentation/visualising_output/index.xml" rel="self" type="application/rss+xml"/><description>Visualising output</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><image><url>/images/logo_hub4b4d6a0f57638acebb5550a80c8c030_9243_300x300_fit_lanczos_2.png</url><title>Visualising output</title><link>/documentation/visualising_output.html</link></image><item><title>IDL or GDL</title><link>/documentation/visualising_output/visualising_sdf_files_with_idl_or_gdl.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/visualising_output/visualising_sdf_files_with_idl_or_gdl.html</guid><description>&lt;h1 id="using_idl_to_visualise_data">Using IDL to visualise data&lt;/h1>
 &lt;p>The EPOCH distribution comes with procedures for loading and inspecting
 SDF self-describing data files. The IDL routines are held in the
 &lt;code>SDF/IDL/&lt;/code> directory. There is also a procedure named
@@ -174,7 +174,7 @@ comprehensive array of documentation. This can be accessed by typing
 % ONLINE_HELP: Starting the online help browser.
 IDL&amp;amp;gt;
 &lt;/code>&lt;/pre>
-&lt;p>&lt;img src="../Idl_help.png" alt="The IDL help browser">&lt;/p>
+&lt;p>&lt;img src="Idl_help.png" alt="The IDL help browser">&lt;/p>
 &lt;p>The documentation is divided into books aimed at users or developers and
 is fully searchable and cross indexed.&lt;/p>
 &lt;h1 id="manipulating_and_plotting_data">Manipulating And Plotting Data&lt;/h1>
@@ -214,7 +214,7 @@ example:&lt;/p>
 &lt;pre>&lt;code>IDL&amp;amp;gt; plot,[1,2,3],[2,2,5]
 &lt;/code>&lt;/pre>
 &lt;p>Gives rise to the following plot:&lt;/p>
-&lt;p>&lt;img src="../Idl_simple_plot.png" alt="A simple IDL plot">&lt;/p>
+&lt;p>&lt;img src="Idl_simple_plot.png" alt="A simple IDL plot">&lt;/p>
 &lt;p>As a more concrete example, we will now take a one-dimensional slice
 through the 2D array &amp;ldquo;Number Density&amp;rdquo; read in from our SDF data file. In
 this example we will give the $x$ and $y$ axes labels by passing extra
@@ -226,7 +226,7 @@ IDL&amp;amp;gt; plot,data.x,data.number_density[*,256],xtitle='x', $
 IDL&amp;amp;gt; ytitle='number density'
 &lt;/code>&lt;/pre>
 &lt;p>This command generates the following plot:&lt;/p>
-&lt;p>&lt;img src="../Idl_plot.png" alt="A slice of a 2D array">&lt;/p>
+&lt;p>&lt;img src="Idl_plot.png" alt="A slice of a 2D array">&lt;/p>
 &lt;h1 id="postscript_plots">Postscript Plots&lt;/h1>
 &lt;p>The plots shown so far have just been screen-shots of the interactive
 IDL plotting window. These are fairly low quality and could included as
@@ -251,7 +251,7 @@ IDL&amp;amp;gt; set_plot,'x'
 &lt;/code>&lt;/pre>
 &lt;p>This set of commands results in the following plot being written to a
 file named &amp;ldquo;out.ps&amp;rdquo;.&lt;/p>
-&lt;p>&lt;img src="../Idl_ps_plot.png" alt="A simple PS plot">&lt;/p>
+&lt;p>&lt;img src="Idl_ps_plot.png" alt="A simple PS plot">&lt;/p>
 &lt;p>By default, IDL draws its own set of fonts called &amp;ldquo;Hershey vector
 fonts&amp;rdquo;. Much better looking results can be obtained by using a
 postscript font instead. These options are passed as parameters to the
@@ -282,7 +282,7 @@ IDL&amp;amp;gt; levels=levels,/fill,c_colors=colors
 &lt;p>Issuing these commands gives us the contour plot shown below. Note that
 the colour table used is not the default one but has been constructed to
 be similar to the one used by VisIt.&lt;/p>
-&lt;p>&lt;img src="../Idl_contour.png" alt="A simple contour plot">&lt;/p>
+&lt;p>&lt;img src="Idl_contour.png" alt="A simple contour plot">&lt;/p>
 &lt;h1 id="shaded_surface_plots_in_idl">Shaded Surface Plots in IDL&lt;/h1>
 &lt;p>Another method for visualising 2D datasets is to produce a 3D plot in
 which the data is elevated in the $z$ direction by a height proportional
@@ -296,7 +296,7 @@ colour table which is&amp;quot;RED_TEMPERATURE&amp;quot;.&lt;/p>
 IDL&amp;amp;gt; shade_surf,data.number_density,data.x,data.y,xstyle=1, $
 IDL&amp;amp;gt; ystyle=1,xtitle='x',ytitle='y',ztitle='number density',charsize=3
 &lt;/code>&lt;/pre>
-&lt;p>&lt;img src="../Idl_shade_surf.png" alt="A shaded surface plot">&lt;/p>
+&lt;p>&lt;img src="Idl_shade_surf.png" alt="A shaded surface plot">&lt;/p>
 &lt;h1 id="interactive_plotting">Interactive Plotting&lt;/h1>
 &lt;p>Finally, in recent versions of IDL (not GDL) it is now possible to
 perform all of these plot types in an interactive graphical user
@@ -304,7 +304,7 @@ interface. The corresponding procedures are launched with the commands
 &lt;strong>iplot&lt;/strong>, &lt;strong>icontour&lt;/strong> and &lt;strong>isurface&lt;/strong>.&lt;/p>
 &lt;pre>&lt;code>IDL&amp;amp;gt; iplot,data.x,data.number_density[*,256]
 &lt;/code>&lt;/pre>
-&lt;p>&lt;img src="../Idl_iplot.png" alt="Interactive plotting">&lt;/p>
+&lt;p>&lt;img src="Idl_iplot.png" alt="Interactive plotting">&lt;/p>
 &lt;p>IDL is an extremely useful tool but it also comes with a fairly hefty
 price tag. If you are not part of an organisation that will buy it for
 you then you may wish to look into a free alternative. It is also a
@@ -318,7 +318,7 @@ couple of small changes. Other tools worth investigating are
 &lt;em>&lt;code>&amp;quot;yorick&amp;quot;&lt;/code>&lt;/em> and &lt;em>&lt;code>&amp;quot;python&amp;quot;&lt;/code>&lt;/em> with the
 &lt;em>&lt;code>&amp;quot;SciPy&amp;quot;&lt;/code>&lt;/em> libraries. The python SDF reader documentation
 will be added soon. At present there is no SDF reader for yorick but one
-may be developed if there is sufficient demand.&lt;/p></description></item><item><title>LLNL VisIt</title><link>/documentation/visualising_output/visualising_sdf_files_with_llnl_visit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/visualising_output/visualising_sdf_files_with_llnl_visit/</guid><description>&lt;h1 id="using_visit_to_visualise_data">Using VisIt to visualise data&lt;/h1>
+may be developed if there is sufficient demand.&lt;/p></description></item><item><title>LLNL VisIt</title><link>/documentation/visualising_output/visualising_sdf_files_with_llnl_visit.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/visualising_output/visualising_sdf_files_with_llnl_visit.html</guid><description>&lt;h1 id="using_visit_to_visualise_data">Using VisIt to visualise data&lt;/h1>
 &lt;h1 id="llnl_visit">LLNL VisIt&lt;/h1>
 &lt;p>LLNL&amp;rsquo;s VisIt software is a parallel data visualisation package (
 &lt;a href="https://wci.llnl.gov/simulation/computer-codes/visit" target="_blank" rel="noopener">LLNL
@@ -357,7 +357,7 @@ datasets&lt;/li>
 &lt;p>Both the source code and pre-compiled binaries are available for
 download from the projects web page which is found at the URL
 &lt;a href="https://wci.llnl.gov/simulation/computer-codes/visit">https://wci.llnl.gov/simulation/computer-codes/visit&lt;/a>&lt;/p>
-&lt;p>&lt;img src="../Visit_web.png" alt="The LLNL VisIT website">&lt;/p>
+&lt;p>&lt;img src="Visit_web.png" alt="The LLNL VisIT website">&lt;/p>
 &lt;p>There are full instructions for compiling the project from source code
 along with build scripts written to help ease the process. However, this
 is not recommended as it is an extremely large tool and the compilation
@@ -420,7 +420,7 @@ installed on the local machine. This is particularly useful when using a
 Windows environment to analyse data located on a remote UNIX
 workstation.&lt;/p>
 &lt;h1 id="loading_data_into_visit">Loading Data Into VisIt&lt;/h1>
-&lt;p>&lt;img src="../Visit_db_list.png" alt="The VisIt load databasedialog">&lt;/p>
+&lt;p>&lt;img src="Visit_db_list.png" alt="The VisIt load databasedialog">&lt;/p>
 &lt;p>The most straightforward method for loading data into VisIt is to start
 the application and then browse the filesystem for the dataset you are
 interested in. This is done by selecting &amp;ldquo;File ⇒ Open file&amp;rdquo; from the
@@ -442,7 +442,7 @@ in a virtual database.&lt;/p>
 &lt;p>Yet another method for selecting the dataset to use is by opening a
 previously saved session file. We will discuss this further in a later
 section.&lt;/p>
-&lt;p>&lt;img src="../Visit_select_var.png" alt="The Visit select plot type and variabledropdown">&lt;/p>
+&lt;p>&lt;img src="Visit_select_var.png" alt="The Visit select plot type and variabledropdown">&lt;/p>
 &lt;p>Once an SDF file has been successfully loaded the &amp;ldquo;Add&amp;rdquo; menu item will
 become un-greyed and the cycle numbers for each file in the virtual
 database will be displayed. If we navigate to one of the plot types we
@@ -465,7 +465,7 @@ select this item since it only generates a contour plot with lines
 indicating each contour level and not a filled version. Instead we
 choose &amp;ldquo;Add ⇒ Pseudocolor ⇒ Derived ⇒ Number Density&amp;rdquo; and then hit the
 &amp;ldquo;Draw&amp;rdquo; button.&lt;/p>
-&lt;p>&lt;img src="../Visit_contour.png" alt=" VisIT contour plotoutput">&lt;/p>
+&lt;p>&lt;img src="Visit_contour.png" alt=" VisIT contour plotoutput">&lt;/p>
 &lt;p>There are many settings which can alter the visual appearance of plots
 generated by VisIt. The first point of call is usually to open up the
 &amp;ldquo;Plot Attributes&amp;rdquo; or &amp;ldquo;Operator Attributes&amp;rdquo; dialogue corresponding to the
@@ -477,12 +477,12 @@ arrow on the left hand side of the plot in the main VisIt menu pane.
 This will drop down to reveal a list containing the plot and all
 operators acting on it. Double-clicking on an operator will launch the
 corresponding &amp;ldquo;Operator Attributes&amp;rdquo; dialogue.&lt;/p>
-&lt;p>&lt;img src="../Visit_attrib.png" alt="image">&lt;/p>
+&lt;p>&lt;img src="Visit_attrib.png" alt="image">&lt;/p>
 &lt;p>Another important tool for controlling the appearance of plots can be
 found in &amp;ldquo;Controls ⇒ Annotation&amp;rdquo; from the VisIt menu bar. This allows
 all of the plot annotations to be modified such as the legend, title,
 axis labels, etc.&lt;/p>
-&lt;p>&lt;img src="../Visit_annot.png" alt="The VisIT annotationsdialog">&lt;/p>
+&lt;p>&lt;img src="Visit_annot.png" alt="The VisIT annotationsdialog">&lt;/p>
 &lt;h1 id="d_plotting_in_visit">1D Plotting in VisIt&lt;/h1>
 &lt;p>A 1D plot in VisIt is called a &amp;ldquo;Curve&amp;rdquo; plot. We already mentioned that
 this was greyed out because we have no one dimensional variables in our
@@ -491,11 +491,11 @@ data file.&lt;/p>
 one dimensional array from a 2D or 3D variable. This operator is
 selected by pressing the button with red and blue lines located at the
 top of the plot window.&lt;/p>
-&lt;p>&lt;img src="../Visit_lineout.png" alt="image">&lt;/p>
+&lt;p>&lt;img src="Visit_lineout.png" alt="image">&lt;/p>
 &lt;p>Once the button has been pressed, we can click and drag anywhere in the
 &amp;ldquo;Pseudocolor&amp;rdquo; plot window. When we release the mouse button a new plot
 window pops up containing a &amp;ldquo;Curve&amp;rdquo; plot of the data just selected.&lt;/p>
-&lt;p>&lt;img src="../Visit_curve.png" alt="VisIt curve plot example">&lt;/p>
+&lt;p>&lt;img src="Visit_curve.png" alt="VisIt curve plot example">&lt;/p>
 &lt;p>In order to change the attributes for this plot, we must first select
 Active window&amp;quot; number 2 in the main VisIt pane.&lt;/p>
 &lt;h1 id="shaded_surface_plots_in_visit">Shaded Surface Plots in VisIt&lt;/h1>
@@ -508,7 +508,7 @@ did before. Next select the &amp;ldquo;Operator Attributes ⇒ Transforms ⇒ El
 menu item. In the pop up dialogue click on the &amp;ldquo;Elevation height
 relative to XY limits?&amp;rdquo; and then &amp;ldquo;Apply&amp;rdquo;. Click &amp;ldquo;Yes&amp;rdquo; when the warning
 dialogue pops up.&lt;/p>
-&lt;p>&lt;img src="../Visit_shade_surf.png" alt="VisIt shaded surfaceplots">&lt;/p>
+&lt;p>&lt;img src="Visit_shade_surf.png" alt="VisIt shaded surfaceplots">&lt;/p>
 &lt;p>To make this plot look similar to the one generated by IDL, we have
 changed the colour table using &amp;ldquo;Controls ⇒ Color table&amp;rdquo;. We also changed
 the axis appearance with the annotations menu discussed earlier and
@@ -523,7 +523,7 @@ this variable behaves in exactly the same way as any of the variables
 read from the data file.&lt;/p>
 &lt;p>As an example, we can combine the three components of electric field to
 generate a single electric field vector.&lt;/p>
-&lt;p>&lt;img src="../Visit_expression_vector.png" alt=" VisIT expression dialog showing an example vectorexpression">&lt;/p>
+&lt;p>&lt;img src="Visit_expression_vector.png" alt=" VisIT expression dialog showing an example vectorexpression">&lt;/p>
 &lt;p>Now when we return to the &amp;ldquo;Add&amp;rdquo; menu we see that the &amp;ldquo;Vector&amp;rdquo; and
 &amp;ldquo;Streamline&amp;rdquo; and plot types now have an entry for our newly defined
 vector.&lt;/p>
@@ -553,7 +553,7 @@ format such as &amp;ldquo;PNG&amp;rdquo; to save to rather than &amp;ldquo;MPEG&
 generate one image per frame and number them consecutively. At the end
 of the process the images can be converted into a movie using whatever
 tool best accomplishes the task.&lt;/p>
-&lt;p>&lt;img src="../Visit_movie.png" alt="VisIt create moviedialog">&lt;/p>
+&lt;p>&lt;img src="Visit_movie.png" alt="VisIt create moviedialog">&lt;/p>
 &lt;p>Another useful tip is to select the &amp;ldquo;Later, tell me the command to run&amp;rdquo;
 radio button. This will output a long command which can run from a UNIX
 terminal screen. The advantage is that no X session is required so the
@@ -596,7 +596,7 @@ list of pre-defined host profiles. These are unnecessary for anyone not
 affiliated and can safely be removed by deleting the directory
 &lt;code>$HOME/visit/current/.visit&lt;/code> (assuming you have unpacked the VisIt
 tarball into your home directory).&lt;/p>
-&lt;p>&lt;img src="../Visit_host_profile.png" alt="VisIT remote host configurationdialog">&lt;/p>
+&lt;p>&lt;img src="Visit_host_profile.png" alt="VisIT remote host configurationdialog">&lt;/p>
 &lt;p>Create a new profile by clicking on the &amp;ldquo;New Host&amp;rdquo; button and filling
 out some of the form fields. The important ones to change are &amp;ldquo;Host
 nickname&amp;rdquo;, &amp;ldquo;Remote host name&amp;rdquo;, &amp;ldquo;Host name aliases&amp;rdquo; and &amp;ldquo;Username&amp;rdquo;. If
@@ -613,7 +613,7 @@ selection procedure but now displaying files located on the remote
 machine rather than the local one. From this point on everything should
 work as before except you should see the name of the remote machine in
 the &amp;ldquo;Selected files&amp;rdquo; dialogue.&lt;/p>
-&lt;p>&lt;img src="../Visit_host_files.png" alt=" VisIT load file dialog showing files on remotehost">&lt;/p>
+&lt;p>&lt;img src="Visit_host_files.png" alt=" VisIT load file dialog showing files on remotehost">&lt;/p>
 &lt;h1 id="parallel_visualisation">Parallel Visualisation&lt;/h1>
 &lt;p>Parallel visualisation is performed in almost exactly the same manner as
 remote visualisation. Again, you must create a host profile for the
@@ -632,7 +632,7 @@ arguments to use.&lt;/p>
 the &amp;ldquo;User documentation&amp;rdquo; section provided at
 &lt;a href="http://www.visitusers.org" target="_blank" rel="noopener">1&lt;/a> . Of particular help here is the &amp;ldquo;Getting
 VisIt to run in parallel&amp;rdquo; section and the &amp;ldquo;How VisIt Launching works&amp;rdquo;
-entry in the &amp;ldquo;Developer documentation&amp;rdquo; section.&lt;/p></description></item><item><title>Python</title><link>/documentation/visualising_output/python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/visualising_output/python/</guid><description>&lt;h1 id="installing_the_python_sdf_readers">Installing the python sdf readers&lt;/h1>
+entry in the &amp;ldquo;Developer documentation&amp;rdquo; section.&lt;/p></description></item><item><title>Python</title><link>/documentation/visualising_output/python.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/documentation/visualising_output/python.html</guid><description>&lt;h1 id="installing_the_python_sdf_readers">Installing the python sdf readers&lt;/h1>
 &lt;p>To install the python sdf readers you need to have an installation of
 python (2 or 3) with the numpy library. The automated plotting library
 requires the matplotlib library. Both numpy and matplotlib are available
@@ -746,7 +746,7 @@ system. The code &lt;code>plt.ion()&lt;/code> sets matplotlib to interactive mod
 control will be returned to you as soon as the plot has finished
 drawing.&lt;/p>
 &lt;p>
-&lt;a href="../Matplotlib1D_screenshot.png">Example 1D plot generated by sdf_helper.plot_auto&lt;/a>&lt;/p>
+&lt;a href="Matplotlib1D_screenshot.png">Example 1D plot generated by sdf_helper.plot_auto&lt;/a>&lt;/p>
 &lt;p>Plotting a 2D function is the same basic idea, and the code&lt;/p>
 &lt;pre>&lt;code class="language-python">import sdf_helper as sh
 import matplotlib.pyplot as plt
@@ -754,7 +754,7 @@ plt.ion()
 data=sh.getdata('Data/0010.sdf')
 sh.plot_auto(data.dist_fn_x_px_Right, iso=0)
 &lt;/code>&lt;/pre>
-&lt;p>&lt;img src="../Matplotlib2D.png" alt=" thumb \| 200px \| Example 2D plot generated bysdf_helper.plot_auto">&lt;/p>
+&lt;p>&lt;img src="Matplotlib2D.png" alt=" thumb \| 200px \| Example 2D plot generated bysdf_helper.plot_auto">&lt;/p>
 &lt;p>will produce the figure on the right. The procedure for variables from
 EPOCH2D data is exactly the same.&lt;/p>
 &lt;h3 id="changing_colour_tables">Changing colour tables&lt;/h3>
